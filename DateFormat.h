@@ -134,6 +134,36 @@ namespace funct {
 	
 	}
 
+	/*********************************************************************/
+	
+	int countLeapYears( Date d ) const
+	{
+		int years = d.year;
+	 
+		// Check if the current year needs to be considered
+		// for the count of leap years or not
+		if (d.month <= 2)
+		    years--;
+	 
+		// An year is a leap year if it is a multiple of 4,
+		// multiple of 400 and not a multiple of 100.
+		return ( years/4 - years/100 + years/400 );
+	}
+	
+	/*********************************************************************/
+	
+	long long int dayNumber( Date dt ) const
+	{
+		int m,d,y;
+		m = (dt.month + 9)%12;
+		y = dt.year - m/10;
+		d = dt.day;
+		
+		return (365*y + y/4 - y/100 + y/400 + (m*306 + 5)/10 + ( d - 1 ));
+	}
+	 
+	/*********************************************************************/ 
+	 
 	
 }
 
