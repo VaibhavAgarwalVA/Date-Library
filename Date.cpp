@@ -1,21 +1,164 @@
 //header classes
 #include "Date.h"
-#include "DateFormat.h"
 
 
+/***********************************************************************************/
+/***********************************************************************************/
+/***********************************************************************************/
+/***********************************************************************************/
 
-/***********************************************************************************/
-/***********************************************************************************/
-/***********************************************************************************/
-/***********************************************************************************/
+
+	void parser ( string form, char* df, char* mf, char* yf )
+		
+	{
+		int first, second;                                                       //index of first and second hyphens
+		int size = strlen(form);
+	
+		first = -1;
+		for(int i=0; i<size; i++) {
+			if(form[i] == '-' && first==-1){
+				first = i;
+			}
+			else if(form[i] == '-'){
+				second = i;
+			}
+		}
+	
+		int size1 = first;
+		df = static_cast<char*> (form.substr( 0, size1 ));
+	
+		int size2 = second - first - 1 ;
+		mf = static_cast<char*> (form.substr( first + 1, size2 ));
+	
+		int size3 = (size-1) - second;
+		yf = static_cast<char*> (form.substr( second + 1, size3 ));
+	
+	}
+	
+	/********************************************************************************/	
+	
+	int noOfHyphens ( string st ) 
+		
+	{
+		int num  = 0;
+		int size = strlen( st );
+	
+		for(int i=0; i<size; i++){
+			if(st[i] == '-')
+				num++;
+		}
+	
+		return num;
+	}	
+	
+	/*****************************************************/
+	
+	void checkDate( int day_, int month_, int year_ )                       //constant function. cannot alter values.
+		
+	{
+
+		//condition on years
+		if(year_>= 2050 || year_ < 1950){
+			throw out_of_range("");
+		}
+	
+		//general condition 
+		if( day_<=0 || month_<=0  || month_>12 || month_>31 ){
+			throw invalid_argument("");
+		}
+	
+		//date and month condition
+		int st= 0;
+		switch(month_)
+		{
+			case 1: if( day_ > 31 )
+					st=1; break;
+			case 2: if( !year_%4 ){ 
+						if( day_ > 29 ) {
+							st=1;
+							break;
+						}
+					}
+					else{
+						if( day_ > 28 ) {
+							st=1;
+							break;
+						}
+					}
+			case 3: if( day_ > 31 )
+					st=1; break;
+			case 4: if( day_ > 30 )
+					st=1; break;
+			case 5: if( day_ > 31 )
+					st=1; break;
+			case 6: if( day_ > 30 )
+					st=1; break;
+			case 7: if( day_ > 31 )
+					st=1; break;
+			case 8: if( day_ > 31 )
+					st=1; break;
+			case 9: if( day_ > 30 )
+					st=1; break;
+			case 10: if( day_ > 31 )
+					st=1; break;
+			case 11: if( day_ > 30 )
+					st=1; break;
+			case 12: if( day_ > 31 )
+					st=1; break;
+			default: throw invalid_argument("");
+					 break;			 
+		}
+		if(st==1){
+			throw domain_error("");
+		}
+	
+	}
+
+	/*********************************************************************/
+	
+	int Date::countLeapYears( Date d ) 
+	{
+		int years = d.year;
+	 
+		// Check if the current year needs to be considered
+		// for the count of leap years or not
+		if (d.month <= 2)
+		    years--;
+	 
+		// An year is a leap year if it is a multiple of 4,
+		// multiple of 400 and not a multiple of 100.
+		return ( years/4 - years/100 + years/400 );
+	}
+	
+	/*********************************************************************/
+	
+	long long int Date::dayNumber( Date dt ) 
+	{
+		int m,d,y;
+		m = (dt.month + 9)%12;
+		y = dt.year - m/10;
+		d = dt.day;
+		
+		return (365*y + y/4 - y/100 + y/400 + (m*306 + 5)/10 + ( d - 1 ));
+	}
+	 
+	/*********************************************************************/ 
+	 
+	
+
+/*********************************************************************/ 
+/*********************************************************************/ 
+/*********************************************************************/ 
+/*********************************************************************/ 
+
+
 
 
 //Constructors
 
-Date::Date (Day d, Month m, Year y) 
-	throw( invalid_argument, domain_error, out_of_range )
+Date::Date (Day d, Month m, Year y) throw( invalid_argument, domain_error, out_of_range )
 {
-	funct::checkDate ( (int)d , (int)m, y );
+	checkDate ( (int)d , (int)m, y );
 	day   = d;
 	month = m;
 	year  = y;
@@ -23,26 +166,69 @@ Date::Date (Day d, Month m, Year y)
 
 /***********************************************************************************/
 
-explicit Date::Date (const char* str)
-	throw( invalid_argument, domain_error, out_of_range )
+Date::Date (const char* str) throw(invalid_argument, domain_error, out_of_range)
 {
+	if(!strcmp(format.getMF(),"mmm")){
+        throw invalid_argument("Output only field");
+    }
+    
 	if(format.getDF()==NULL || format.getMF()==NULL || format.getYF()==NULL){
 		cout<<"Format Not Specified. Error."<<endl;
 		throw invalid_argument("");
 	}
 	
-	int n = funct::noOfHyphens ( static_cast<string> str );
+	string stri = static_cast<string> (str);
+	int n = noOfHyphens ( stri );
 	if( n!= 2 ){
 		throw invalid_argument("");
 	}
 	
-	////reh gaya
+	char* d;
+	char* m;
+	char* y;
+	parser( stri, d, m, y );
+	
+	int dd=atoi(d);
+	if(dd<10){
+		if(strlen(d)!=strlen(format.getDF())) {
+			throw invalid_argument("");
+		}
+	}
+	
+	int mm=atoi(m);
+	if(mm<10) {
+		if(strlen(m)!=strlen(format.getMF())) {
+			throw invalid_argument("");
+		}	
+	}
+	
+	int yy=atoi(y);
+	if(strcmp(format.getYF(),"yy")==0){
+		if(yy>=50) {	
+			yy+=1900;
+		}	
+		else if(yy>=0) {
+			yy+=2000;
+		}
+		else {
+			throw out_of_range("");
+		}	
+	}
+	
+	// cout<<dd<<mm<<yy;
+	checkDate(dd,mm,yy);
+	
+	day   = static_cast<Day> (dd);
+	month = static_cast<Month> (mm);
+	year  = yy;
+	
+	delete[] m,d,y;
 }	
 	
 /************************************************************************************/
 
 Date::Date()                            
-	throw(domain_error,out_of_range)                   // http://stackoverflow.com/questions/997946/how-to-get-current-time-and-date-in-c
+	  throw(invalid_argument, domain_error, out_of_range)               // http://stackoverflow.com/questions/997946/how-to-get-current-time-and-date-in-c
 {
 	time_t t = time(0);   
     struct tm * now = localtime( & t );
@@ -52,14 +238,14 @@ Date::Date()
     
 	checkDate(d_,m_,y_);
 	
-	day   = static_cast<Day> d_;
-	month = static_cast<Month> m_;
+	day   = static_cast<Day> (d_);
+	month = static_cast<Month> (m_);
 	year  = y_;
 }
 
 /**************************************************************************************/
 
-Date::Date(const Date& d)
+Date::Date(const Date& d)  throw(invalid_argument, domain_error, out_of_range)        //copy constructor
 {
 	day   = d.day;
 	month = d.month;
@@ -68,7 +254,7 @@ Date::Date(const Date& d)
 
 /**************************************************************************************/
 
-Date::~Date() 
+Date::~Date()  //destructor
 {
 	cout<<"Date object Destroyed"<<endl;
 }	
@@ -78,7 +264,8 @@ Date::~Date()
 /**************************************************************************************/
 /**************************************************************************************/
 
-Date& Date::operator= (Date& date) 
+//Assignment 
+Date& Date::operator= (const Date& date) throw(invalid_argument, domain_error, out_of_range)
 {
 	day   = date.day;
 	month = date.month;
@@ -88,13 +275,13 @@ Date& Date::operator= (Date& date)
 
 
 /****************************************************************************************/
-//UNARY operators
+								//UNARY operators
 
 Date& Date::operator++ ()
-	throw ( out_of_range )
+	throw(invalid_argument, domain_error, out_of_range)
 {
-	int dd = static_cast<int> day;
-	int mm = static_cast<int> month;
+	int dd = static_cast<int> (day);
+	int mm = static_cast<int> (month);
 	
 	if( mm==4 || mm==6 || mm==9 || mm==11 ){
 		if( dd==30 ) {
@@ -147,17 +334,17 @@ Date& Date::operator++ ()
 	}
 	
 	
-	day   = static_cast<Day> dd;
-	month = static_cast<Month> mm;
+	day   = static_cast<Day> (dd);
+	month = static_cast<Month> (mm);
 	
 	return *this;
 }	
 
 Date& Date::operator++ (int)
-	throw (out_of_range)
+	throw(invalid_argument, domain_error, out_of_range)
 {
-	int dd = static_cast<int> day;
-	int mm = static_cast<int> month;
+	int dd = static_cast<int> (day);
+	int mm = static_cast<int> (month);
 	
 	if( mm==4 || mm==6 || mm==9 || mm==11 ){
 		if( dd>=24 ) {
@@ -210,8 +397,8 @@ Date& Date::operator++ (int)
 	}
 	
 	
-	day   = static_cast<Day> dd;
-	month = static_cast<Month> mm;
+	day   = static_cast<Day> (dd);
+	month = static_cast<Month> (mm);
 	
 	return *this;
 }	
@@ -219,10 +406,10 @@ Date& Date::operator++ (int)
 
 
 Date& Date::operator-- ()
-	throw (out_of_range)
+	throw(invalid_argument, domain_error, out_of_range)
 {
-	int dd = static_cast<int> day;
-	int mm = static_cast<int> month;
+	int dd = static_cast<int> (day);
+	int mm = static_cast<int> (month);
 	
 	if( mm==2 || mm==4 || mm==6 || mm==8 || mm==9 || mm==11 ){
 		if( dd==1 ) {
@@ -277,17 +464,17 @@ Date& Date::operator-- ()
 	}
 	
 	
-	day   = static_cast<Day> dd;
-	month = static_cast<Month> mm;
+	day   = static_cast<Day> (dd);
+	month = static_cast<Month> (mm);
 	
 	return *this;
 }	
 
 Date& Date::operator-- (int)
-	throw (out_of_range)
+	throw(invalid_argument, domain_error, out_of_range)
 {
-	int dd = static_cast<int> day;
-	int mm = static_cast<int> month;
+	int dd = static_cast<int> (day);
+	int mm = static_cast<int> (month);
 	
 	if( mm==2 || mm==4 || mm==6 || mm==8 || mm==9 || mm==11 ){
 		if( dd<=7 ) {
@@ -342,13 +529,14 @@ Date& Date::operator-- (int)
 	}
 	
 	
-	day   = static_cast<Day> dd;
-	month = static_cast<Month> mm;
+	day   = static_cast<Day> (dd);
+	month = static_cast<Month> (mm);
 	
 	return *this;
 }
 
 /****************************** UNARY COMPLETED ****************************************/
+/***************************************************************************************/ 
 
 
 //Boolean
@@ -361,6 +549,12 @@ bool Date::leapYear() const
 	return false;
 }
 
+
+
+/*********************************************************************/ 
+/*********************************************************************/ 
+				// binary comparator functions
+
 bool Date::operator==(const Date& otherDate)
 {
 	if(otherDate.day == day && otherDate.month == month && otherDate.year == year){
@@ -371,7 +565,7 @@ bool Date::operator==(const Date& otherDate)
 
 bool Date::operator!=(const Date& otherDate)
 {
-	if( this == otherDate ) {
+	if( *this == otherDate ) {
 		return false;
 	}
 	return true;
@@ -441,31 +635,37 @@ bool Date::operator>= (const Date& other)
 	}
 }
 
-unsigned int Date::operator- (const char& other)
+
+/*********************************************************************/ 
+/*********************************************************************/ 
+				// Binary operators (+,-)
+
+unsigned int Date::operator- (const Date& other)
+	throw(invalid_argument, domain_error, out_of_range)
 {
 	//Implementation 1: inspired from geeksforgeeks
 	const int monthDays[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 	
-	unsigned int n1 = year*365 + day ;
+	int n1 = year*365 + day ;
 	for(int i=0; i< month-1; i++){
 		n1 += monthDays[i];
 	}
-	n1 += funct::countLeapYears(*this);
+	n1 += countLeapYears(*this);
 	
-	unsigned int n2 = other.year*365 + other.day ;
+	int n2 = other.year*365 + other.day ;
 	for(int i=0; i< other.month-1; i++){
 		n2 += monthDays[i];
 	}
-	n2 += funct::countLeapYears(other);
+	n2 += countLeapYears(other);
 	
-	return (n1 - n2);
+	return (n1-n2)>0 ? (n1-n2) : (n2-n1);
 
 	
 	//Implementation 2: inspired from concordia
 /*	
 	long long int n1, n2;
-	n1 = funct::dayNumber(this);
-	n2 = funct::dayNumber(other);
+	n1 = dayNumber(this);
+	n2 = dayNumber(other);
 	return (n1 - n2);
 
 /**/	
@@ -473,9 +673,9 @@ unsigned int Date::operator- (const char& other)
 
 
 Date Date::operator+ (int noOfDays)
-	throw( domain_error, out_of_range )
+	throw(invalid_argument, domain_error, out_of_range)
 {
-	int n = funct::dayNumber(*this);
+	int n = dayNumber(*this);
 	n += noOfDays;
 	
 	int y = (10000*n + 14780)/3652425 ;
@@ -489,7 +689,7 @@ Date Date::operator+ (int noOfDays)
 	y = y + (mi + 2)/12;
 	int dd = ddd - (mi*306 + 5)/10 + 1;	
 	
-	Date d= new Date(dd,mm,y);
+	Date d ( (Day) dd, (Month) mm, (Year) y);
 	if(y>=2050 || y<1950){
 		throw out_of_range("");
 	}
@@ -497,16 +697,20 @@ Date Date::operator+ (int noOfDays)
 }
 
 
-Date::operator Weekday() const                                 //Sakamoto Algorithm
+/*********************************************************************/ 
+/*********************************************************************/ 
+
+Date::operator WeekDay() const                                 //Sakamoto Algorithm
 {
 	//Works on called date:
 	static int t[] = {0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4};
-   	year -= month < 3;
-   	int res = (year + year/4 - year/100 + year/400 + t[m-1] + day) % 7;
+	int ye = year;
+   	ye -= (month < 3);
+   	int res = (ye + ye/4 - ye/100 + ye/400 + t[month-1] + day) % 7;
    	if(res == 0){
    		res = 7;
    	}
-   	return (Weekday) res;
+   	return (WeekDay) res;
    	
    	//Implementation using Library:
    	/*
@@ -527,10 +731,11 @@ Date::operator Month() const
 	return month;
 }
 
+/*********************************************************************/ 
 
 Date GetIsoWeekOne(int Year) {
 	  // get the date for the 4-Jan for this year
-	Date dt = new Date(Year, 1, 4);
+	Date dt (D04, Jan, Year);
 
 	  // get the ISO day number for this date 1==Monday, 7==Sunday
 	int dayNumber = (int) WeekDay(dt);
@@ -544,9 +749,11 @@ Date GetIsoWeekOne(int Year) {
 Date::operator WeekNumber() const                            // ISO 8601 Certified Date.
 {	
 	int IsoYear = year;
-	if (*this >= new Date(IsoYear, 12, 29)) {
-		Date week1 = GetIsoWeekOne(IsoYear + 1);
-		if (*this < week1) {
+	Date week1;
+	Date dte ( D29 , Dec, IsoYear );
+	if (dte <= *this) {
+		week1 = GetIsoWeekOne(IsoYear + 1);
+		if (week1 > *this) {
 		  	week1 = GetIsoWeekOne(IsoYear);
 		}
 		else {
@@ -554,15 +761,21 @@ Date::operator WeekNumber() const                            // ISO 8601 Certifi
 		}
 	}
 	else {
-		Date week1 = GetIsoWeekOne(IsoYear);
-		if (*this < week1) {
+		week1 = GetIsoWeekOne(IsoYear);
+		if (week1 > *this) {
 			week1 = GetIsoWeekOne(--IsoYear);
 		}
 	}
-
-	return ((*this - week1) / 7 + 1);
+	
+	if(week1 == *this){
+		return (WeekNumber)1;
+	}
+	return (WeekNumber)((week1 - *this - 1) / 7 + 1);
 }
 
+
+/*********************************************************************/ 
+/*********************************************************************/ 
 
 //FORMATS
 void Date::setFormat(DateFormat& df)
@@ -575,6 +788,9 @@ DateFormat& Date::getFormat()
 	return format;
 }
 
+
+/*********************************************************************/ 
+/*********************************************************************/ 
 
 //Streams
 istream& operator>> (istream& is, Date& d){
@@ -593,15 +809,15 @@ istream& operator>> (istream& is, Date& d){
 }
 
 ostream& operator<<(ostream& os, const Date& d){
-	int dd = static_cast<int> d.day;
-	int mm = static_cast<int> d.month;
-	if(Date::format.getdateFormat()!=0)
+	int dd = static_cast<int> (d.day);
+	int mm = static_cast<int> (d.month);
+	if(Date::format.getDF()!=0)
 	{
-		if(dd>9) {
+		if(dd>=10) {
 			os<<dd;
 		}
 		else{
-			if(strcmp(Date::format.getdateFormat(),"d")==0){
+			if(strcmp(Date::format.getDF(),"d")==0){
 				os<<dd;	
 			}
 			else {
@@ -611,7 +827,7 @@ ostream& operator<<(ostream& os, const Date& d){
 		os<<"-";
 	}
 	
-	if(strcmp(Date::format.getmonthFormat(),"mmm")==0){
+	if(strcmp(Date::format.getMF(),"mmm")==0){
 		switch(mm){
 		case 1:	os<<"Jan";	break;
 		case 2:	os<<"Feb";	break;
@@ -628,13 +844,13 @@ ostream& operator<<(ostream& os, const Date& d){
 		default: os<<"Not valid";
 		}
 	}
-	else if(Date::format.getmonthFormat()!=0)
+	else if(Date::format.getMF()!=0)
 	{
 		if(mm>9) {
 			os<<mm;
 		}
 		else{
-			if(strcmp(Date::format.getmonthFormat(),"m")==0){
+			if(strcmp(Date::format.getMF(),"m")==0){
 				os<<mm;	
 			}
 			else {
@@ -660,9 +876,9 @@ ostream& operator<<(ostream& os, const Date& d){
 		}
 	}
 	
-	if(Date::format.getyearFormat()!=0){
+	if(Date::format.getYF()!=0){
 		os<<"-";
-		if(strcmp(Date::format.getyearFormat(),"yy")==0){
+		if(strcmp(Date::format.getYF(),"yy")==0){
 			if(d.year%100<10) {
 				os<<'0'<<d.year%100;
 			}
@@ -677,4 +893,32 @@ ostream& operator<<(ostream& os, const Date& d){
 	return os;
 }
 
+
+
+
+//Main
+int main() 
+{
+	DateFormat dff;
+	Date::setFormat(dff);
+	Date gh;
+	cout<<gh<<endl;
+	DateFormat df("dd-mmm-yy");
+	Date::setFormat(df);
+	Date a("22-Dec-96");
+	Date b("28-Feb-16");
+	cin>>a;
+	int n=a-b;
+	Date c("22-May-12");
+	c=b+n;
+	cout<<c<<endl;
+	// for(int i=0; i<53; i++,c++){
+	// 	WeekNumber wn=WeekNumber(c);
+	// 	cout<<c<<" "<<wn<<endl;
+	// }
+	DateFormat ddff=Date::getFormat();
+	cout<<n;
+
+	return 0;
+}
 

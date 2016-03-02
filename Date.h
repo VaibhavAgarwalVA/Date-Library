@@ -1,9 +1,40 @@
 //include headers
+#include <iostream>
+#include <cstring>
+#include <ctime>
+#include <string.h>
+#include <exception>
 #include <bits/stdc++.h>
-#include "DateFormat.h"
 
 //include namespaces
 using namespace std;
+
+class DateFormat 
+{
+	public:
+	//constructors
+	DateFormat(const char* dateFormat, const char* monthFormat, const char* yearFormat);
+	DateFormat(const char* format);
+	DateFormat();
+	
+	//destructor
+	~DateFormat();
+
+	//getters
+	char* getDF();
+	char* getMF();
+	char* getYF();
+	
+	//setters
+	void getDF(char* st);
+	void getMF(char* st);
+	void getYF(char* st);
+	
+	private:
+	char* dateFormat;
+	char* monthFormat;
+	char* yearFormat;		
+};
 
 
 //enumerators and typedefs
@@ -56,32 +87,15 @@ class Date
 	
 	// CONSTRUCTORS
 
-	Date(Day d, Month m, Year y)
-	// Construct a Date from (d, m, y)
-	throw(
-		invalid_argument,     // One or more of the arguments d or m is/are invalid (27, 13, 13)
-		domain_error,         // (d, m, y) as a triplet does not define a valid date (30, 2, 61)
-		out_of_range    	  // Date is out of range (4, 7, 2053)
-	);
+	Date(Day d, Month m, Year y) throw(invalid_argument, domain_error, out_of_range);
 	
-	explicit Date(const char* date)
-	// date in string format -- to be parsed as static format member
-	throw(
-		invalid_argument, 
-		domain_error, 
-		out_of_range
-	);
+	explicit Date(const char* date) throw(invalid_argument, domain_error, out_of_range);
 	// "13-03-77" for "dd-mm-yy"
 	// "2-7-2018" for "d-m-yyyy"
 	
-	Date()
-	// Default Constructor - construct ’today’ (get from system)
-	throw(
-		domain_error, 
-		out_of_range
-	);
+	Date() throw(invalid_argument, domain_error, out_of_range);
 
-	Date(const Date&); 		// Copy Constructor
+	Date(const Date&) throw(invalid_argument, domain_error, out_of_range); 		// Copy Constructor
 
 	// DESTRUCTOR
 	~Date(); 				// No virtual destructor needed
@@ -89,22 +103,18 @@ class Date
 	/****************************************************************************/
 	
 	// BASIC ASSIGNMENT OPERATOR
-	Date& operator= (const Date&);
+	Date& operator= (const Date&) throw(invalid_argument, domain_error, out_of_range);
 	
 	// UNARY ARITHMETIC OPERATORS
-	Date& operator++ ();           // Next day
-	Date& operator++ (int);        // Same day next week
-	Date& operator-- ();			  // Previous day
-	Date& operator-- (int);		  // Same day previous week
+	Date& operator++ () throw(invalid_argument, domain_error, out_of_range);           // Next day
+	Date& operator++ (int) throw(invalid_argument, domain_error, out_of_range);        // Same day next week
+	Date& operator-- () throw(invalid_argument, domain_error, out_of_range);			  // Previous day
+	Date& operator-- (int) throw(invalid_argument, domain_error, out_of_range);		  // Same day previous week
 
 	// BINARY ARITHMETIC OPERATORS
-	unsigned int operator- (const Date& otherDate);  // Number of days between otherDate and current date
+	unsigned int operator- (const Date& otherDate) throw(invalid_argument, domain_error, out_of_range);  // Number of days between otherDate and current date
 	
-	Date operator+ (int noOfDays)					// Day noOfDays after/before the current date (sign of noOfDays decides ahead/behind)
-	throw(
-		domain_error, 
-		out_of_range
-	);
+	Date operator+ (int noOfDays) throw(invalid_argument, domain_error, out_of_range);				// Day noOfDays after/before the current date (sign of noOfDays decides ahead/behind)
 	
 	
 	// CAST OPERATORS
@@ -131,6 +141,9 @@ class Date
 	static void setFormat(DateFormat&);
 	static DateFormat& getFormat();
 
+	//extra-created
+	int countLeapYears(Date);
+	long long int dayNumber(Date); 
 	
 	/*************************end of public members*********************************/
 	
