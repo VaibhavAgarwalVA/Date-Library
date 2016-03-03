@@ -7,12 +7,13 @@
 /***********************************************************************************/
 /***********************************************************************************/
 
+DateFormat Date::format("dd-mm-yy");
 
-	void parser ( string form, char* df, char* mf, char* yf )
-		
+	void parsers ( string form, char* df, char* mf, char* yf )
+		throw (invalid_argument)
 	{
 		int first, second;                                                       //index of first and second hyphens
-		int size = strlen(form);
+		int size = strlen(form.c_str());
 	
 		first = -1;
 		for(int i=0; i<size; i++) {
@@ -25,23 +26,32 @@
 		}
 	
 		int size1 = first;
-		df = static_cast<char*> (form.substr( 0, size1 ));
+		if(size1 == 0) {
+			throw invalid_argument("");
+		}
+		df = const_cast<char*> ((form.substr( 0, size1 )).c_str());
 	
 		int size2 = second - first - 1 ;
-		mf = static_cast<char*> (form.substr( first + 1, size2 ));
+		if(size1 == 0) {
+			throw invalid_argument("");
+		}
+		mf = const_cast<char*> ((form.substr( first + 1, size2 )).c_str());
 	
 		int size3 = (size-1) - second;
-		yf = static_cast<char*> (form.substr( second + 1, size3 ));
+		if(size1 == 0) {
+			throw invalid_argument("");
+		}
+		yf = const_cast<char*> ((form.substr( second + 1, size3 )).c_str());
 	
 	}
 	
 	/********************************************************************************/	
 	
-	int noOfHyphens ( string st ) 
+	int noOfHyphen ( string st ) 
 		
 	{
 		int num  = 0;
-		int size = strlen( st );
+		int size = strlen( st.c_str() );
 	
 		for(int i=0; i<size; i++){
 			if(st[i] == '-')
@@ -162,6 +172,7 @@ Date::Date (Day d, Month m, Year y) throw( invalid_argument, domain_error, out_o
 	day   = d;
 	month = m;
 	year  = y;
+	cout<<"Date constructed"<<endl;
 }
 
 /***********************************************************************************/
@@ -173,20 +184,20 @@ Date::Date (const char* str) throw(invalid_argument, domain_error, out_of_range)
     }
     
 	if(format.getDF()==NULL || format.getMF()==NULL || format.getYF()==NULL){
-		cout<<"Format Not Specified. Error."<<endl;
-		throw invalid_argument("");
+		//cout<<"Format Not Specified. Error."<<endl;
+		throw invalid_argument("Format Not Specified. Error.");
 	}
 	
-	string stri = static_cast<string> (str);
-	int n = noOfHyphens ( stri );
+	string stri (str);
+	int n = noOfHyphen ( stri );
 	if( n!= 2 ){
-		throw invalid_argument("");
+		throw invalid_argument("Less than the req no of separators found !!");
 	}
 	
 	char* d;
 	char* m;
 	char* y;
-	parser( stri, d, m, y );
+	parsers( stri, d, m, y );
 	
 	int dd=atoi(d);
 	if(dd<10){
@@ -677,6 +688,8 @@ Date Date::operator+ (int noOfDays)
 {
 	int n = dayNumber(*this);
 	n += noOfDays;
+	cout<<"No of days: "<<noOfDays<<endl;
+	cout<<"Day number: "<<n<<endl;
 	
 	int y = (10000*n + 14780)/3652425 ;
 	int ddd = n - (365*y + y/4 - y/100 + y/400) ;
@@ -690,6 +703,7 @@ Date Date::operator+ (int noOfDays)
 	int dd = ddd - (mi*306 + 5)/10 + 1;	
 	
 	Date d ( (Day) dd, (Month) mm, (Year) y);
+	cout<<"New Day Number :"<<dayNumber(d)<<endl;
 	if(y>=2050 || y<1950){
 		throw out_of_range("");
 	}
@@ -895,11 +909,12 @@ ostream& operator<<(ostream& os, const Date& d){
 
 
 
-
+/*
 //Main
 int main() 
 {
 	DateFormat dff;
+	
 	Date::setFormat(dff);
 	Date gh;
 	cout<<gh<<endl;
@@ -918,7 +933,7 @@ int main()
 	// }
 	DateFormat ddff=Date::getFormat();
 	cout<<n;
-
+	
 	return 0;
 }
-
+/***/

@@ -13,8 +13,10 @@ class DateFormat
 {
 	public:
 	//constructors
-	DateFormat(const char* dateFormat, const char* monthFormat, const char* yearFormat);
-	DateFormat(const char* format);
+	DateFormat(const char* dateFormat, const char* monthFormat, const char* yearFormat) 
+		throw ( invalid_argument, domain_error, out_of_range );
+	DateFormat(const char* format)
+		throw ( invalid_argument, domain_error, out_of_range );
 	DateFormat();
 	
 	//destructor
@@ -26,9 +28,9 @@ class DateFormat
 	char* getYF();
 	
 	//setters
-	void getDF(char* st);
-	void getMF(char* st);
-	void getYF(char* st);
+	void setDF(char* st);
+	void setMF(char* st);
+	void setYF(char* st);
 	
 	private:
 	char* dateFormat;
@@ -38,7 +40,7 @@ class DateFormat
 
 
 //enumerators and typedefs
-typedef enum Day {
+enum Day {
 	D01 =  1 , D02 =  2 , D03 =  3 , D04 =  4 , D05 =  5 , D06 =  6 , 
 	D07 =  7 , D08 =  8 , D09 =  9 , D10 = 10 , D11 = 11 , D12 = 12 ,
 	D13 = 13 , D14 = 14 , D15 = 15 , D16 = 16 , D17 = 17 , D18 = 18 , 
@@ -47,7 +49,7 @@ typedef enum Day {
 	D31 = 31 
 };
 
-typedef enum WeekDay {
+enum WeekDay {
 	Mon = 1, Tue = 2, Wed = 3, Thr = 4, Fri = 5, Sat = 6, Sun = 7
 };
 
@@ -56,7 +58,7 @@ typedef enum WeekDay {
 // W01 of 2016 starts on 04/Jan and ends on 10/Jan as 07/Jan is the first Thursday.
 // 01/Jan, 02/Jan, and 03/Jan therefore belongs to the last week of 2015.
 
-typedef enum WeekNumber {
+enum WeekNumber {
 	W01 =  1, W02 =  2, W03 =  3, W04 =  4, W05 =  5,
 	W06 =  6, W07 =  7, W08 =  8, W09 =  9, W10 = 10,
 	W11 = 11, W12 = 12, W13 = 13, W14 = 14, W15 = 15,
@@ -70,7 +72,7 @@ typedef enum WeekNumber {
 	W51 = 51, W52 = 52, W53 = 53 
 };
 
-typedef enum Month {
+enum Month {
 	Jan =  1, Feb =  2, Mar =  3, Apr =  4, May =  5, Jun =  6,
 	Jul =  7, Aug =  8, Sep =  9, Oct = 10, Nov = 11, Dec = 12 
 };
