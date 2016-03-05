@@ -20,17 +20,24 @@ int noOfHyphens ( string st )
 void checkFormat_NULL( char* df, char* mf, char* yf) 
 	throw ( invalid_argument, domain_error, out_of_range )
 {
-	if(df!=0 && strcmp(df,"d")!=0 && strcmp(df,"dd")!=0){
+	
+	if(strcmp(df,"0")==0) {
+		;
+	}
+	else if(df!=0 && strcmp(df,"d")!=0 && strcmp(df,"dd")!=0){
 		cout<<"Date Format Assigned - NULL"<<endl;
 		delete[] df;
 		df= NULL;
 	}
-	if(mf!=0 && strcmp(mf,"mm")!=0 && strcmp(mf,"m")!=0 && strcmp(mf,"mmm")!=0){
+	if(mf!=0 && strcmp(mf,"0")!=0 && strcmp(mf,"mm")!=0 && strcmp(mf,"m")!=0 && strcmp(mf,"mmm")!=0){
 		cout<<"Month Format Assigned - NULL"<<endl;
 		delete[] mf;
 		mf= NULL;
 	}
-	if(yf!=0 && strcmp(yf,"yy")!=0 && strcmp(yf,"yyyy")!=0){
+	if(strcmp(yf,"0")==0){
+		;
+	}
+	else if(yf!=0 && strcmp(yf,"yy")!=0 && strcmp(yf,"yyyy")!=0){
 		cout<<"Year Format Assigned - NULL"<<endl;
 		delete[] yf;
 		yf= NULL;
@@ -56,29 +63,29 @@ void parser ( string form, char* &df, char* &mf, char* &yf )
 			}
 		}
 		
-		cout<<"String received: "<<form<<endl;
+		//cout<<"String received: "<<form<<endl;
 		int size1 = first;
 		if(size1 == 0) {
 			throw invalid_argument("");
 		}
 		strcpy(df, const_cast<char*> ((form.substr( 0, size1 )).c_str()));
-		cout<<"Day format assigned: "<<df<<endl;
+		//cout<<"Day format assigned: "<<df<<endl;
 	
 		int size2 = second - first - 1 ;
 		if(size1 == 0) {
 			throw invalid_argument("");
 		}
 		strcpy(mf ,const_cast<char*> ((form.substr( first + 1, size2 )).c_str()));
-		cout<<"Month Format assigned: "<<mf<<endl;
+		//cout<<"Month Format assigned: "<<mf<<endl;
 	
 		int size3 = (size-1) - second;
 		if(size1 == 0) {
 			throw invalid_argument("");
 		}
 		strcpy(yf , const_cast<char*> ((form.substr( second + 1, size3 )).c_str()));
-		cout<<"Year format assigned: "<<yf<<endl;
+		//cout<<"Year format assigned: "<<yf<<endl;
 	
-		cout<<"Exiting parser..."<<endl;
+		//cout<<"Exiting parser..."<<endl;
 	}
 
 /*****************************************************/
@@ -90,9 +97,45 @@ void parser ( string form, char* &df, char* &mf, char* &yf )
 DateFormat::DateFormat(const char* dForm, const char* mForm, const char* yForm)      //constructor taking in all formats
 	throw ( invalid_argument, domain_error, out_of_range ) 
 {	
-	strcpy( dateFormat  , const_cast<char *> (dForm));
-	strcpy( monthFormat , const_cast<char *> (mForm));
-	strcpy( yearFormat , const_cast<char *> (yForm));
+ 	dateFormat = new char[5];
+ 	monthFormat = new char[5];
+ 	yearFormat = new char[5];
+ 	
+	//cout<<"here"<<endl;
+	if(mForm == NULL){
+		//cout<<"Abhi"<<endl;
+		string s("0");
+		char* temp = const_cast<char *> (s.c_str());
+		strcpy ( monthFormat , temp);
+		//cout<<"Ab"<<endl;
+	}
+	else{
+		strcpy( monthFormat , const_cast<char *> (mForm));
+	}
+	
+	//cout<<"here"<<endl;
+	if(dForm == NULL){
+		//cout<<"Abhi"<<endl;
+		string s("0");
+		char* temp = const_cast<char *> (s.c_str());
+		strcpy ( dateFormat , temp);
+		//cout<<"Ab"<<endl;
+	}
+	else{
+		strcpy( dateFormat , const_cast<char *> (dForm));
+	}
+	
+	//cout<<"here"<<endl;
+	if(yForm == NULL){
+		//cout<<"Abhi"<<endl;
+		string s("0");
+		char* temp = const_cast<char *> (s.c_str());
+		strcpy ( yearFormat , temp);
+		//cout<<"Ab"<<endl;
+	}
+	else{
+		strcpy( yearFormat , const_cast<char *> (yForm));
+	}
 	checkFormat_NULL ( dateFormat, monthFormat, yearFormat );
 }
 
@@ -118,13 +161,13 @@ DateFormat::DateFormat(const char* format)                                      
  	yearFormat = new char[5];
  	
 	parser( str, dateFormat, monthFormat, yearFormat );                     		// str has 2 hyphens
-	cout<<"Day format assigned: "  << dateFormat << endl;
-	cout<<"Month format assigned: "<< monthFormat<< endl;
-	cout<<"Year format assigned: " << yearFormat << endl;
+	//cout<<"Day format assigned: "  << dateFormat << endl;
+	//cout<<"Month format assigned: "<< monthFormat<< endl;
+	//cout<<"Year format assigned: " << yearFormat << endl;
 	
 	checkFormat_NULL ( dateFormat, monthFormat, yearFormat );
 	
-	cout<<"Assigned Date Format: "<< dateFormat<<"-"<<monthFormat<<"-"<<yearFormat<<endl;
+	//cout<<"Assigned Date Format: "<< dateFormat<<"-"<<monthFormat<<"-"<<yearFormat<<endl;
 }
 
 /*****************************************************/
@@ -139,7 +182,7 @@ DateFormat::DateFormat()
 		
 		yearFormat = new char[4];
 		strcpy(yearFormat, "yy");
-		cout<<"Default Constructor called. Format Assigned - dd-mmm-yy"<<endl;
+		//cout<<"Default Constructor called. Format Assigned - dd-mmm-yy"<<endl;
 	}
 
 /*****************************************************/
@@ -147,7 +190,7 @@ DateFormat::DateFormat()
 
 //Destructor
 DateFormat::~DateFormat() {
-	cout<<"Destructed DateFormat"<<endl;
+	
 }
 
 

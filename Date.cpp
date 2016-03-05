@@ -9,7 +9,7 @@
 
 DateFormat Date::format("dd-mm-yy");
 
-	void parsers ( string form, char* df, char* mf, char* yf )
+	void parsers ( string form, char* &df, char* &mf, char* &yf )
 		throw (invalid_argument)
 	{
 		int first, second;                                                       //index of first and second hyphens
@@ -29,19 +29,19 @@ DateFormat Date::format("dd-mm-yy");
 		if(size1 == 0) {
 			throw invalid_argument("");
 		}
-		df = const_cast<char*> ((form.substr( 0, size1 )).c_str());
+		strcpy( df , const_cast<char*> ((form.substr( 0, size1 )).c_str()));
 	
 		int size2 = second - first - 1 ;
 		if(size1 == 0) {
 			throw invalid_argument("");
 		}
-		mf = const_cast<char*> ((form.substr( first + 1, size2 )).c_str());
+		strcpy( mf , const_cast<char*> ((form.substr( first + 1, size2 )).c_str()));
 	
 		int size3 = (size-1) - second;
 		if(size1 == 0) {
 			throw invalid_argument("");
 		}
-		yf = const_cast<char*> ((form.substr( second + 1, size3 )).c_str());
+		strcpy( yf , const_cast<char*> ((form.substr( second + 1, size3 )).c_str()));
 	
 	}
 	
@@ -172,16 +172,18 @@ Date::Date (Day d, Month m, Year y) throw( invalid_argument, domain_error, out_o
 	day   = d;
 	month = m;
 	year  = y;
-	cout<<"Date constructed"<<endl;
+	//cout<<"Date constructed"<<endl;
 }
 
 /***********************************************************************************/
 
 Date::Date (const char* str) throw(invalid_argument, domain_error, out_of_range)
 {
+	/*
 	if(!strcmp(format.getMF(),"mmm")){
         throw invalid_argument("Output only field");
     }
+    /***/
     
 	if(format.getDF()==NULL || format.getMF()==NULL || format.getYF()==NULL){
 		//cout<<"Format Not Specified. Error."<<endl;
@@ -197,9 +199,20 @@ Date::Date (const char* str) throw(invalid_argument, domain_error, out_of_range)
 	char* d;
 	char* m;
 	char* y;
+	d = new char[5];
+ 	m = new char[5];
+ 	y = new char[5];
+ 	
+
 	parsers( stri, d, m, y );
 	
+ 	//cout<<"DATE: "<<d<<endl;
+ 	//cout<<"MONTH: "<<m<<endl;
+ 	//cout<<"YEAR: "<<y<<endl;
+	
+	
 	int dd=atoi(d);
+	//cout<<dd<<endl;
 	if(dd<10){
 		if(strlen(d)!=strlen(format.getDF())) {
 			throw invalid_argument("");
@@ -207,7 +220,23 @@ Date::Date (const char* str) throw(invalid_argument, domain_error, out_of_range)
 	}
 	
 	int mm=atoi(m);
-	if(mm<10) {
+	//cout<<mm<<endl;
+	if(strcmp(format.getMF(),"mmm")==0){
+		if(strcmp(m,"Jan")==0)	mm=1;
+		else if(strcmp(m,"Feb")==0)	mm=2;
+		else if(strcmp(m,"Mar")==0)	mm=3;
+		else if(strcmp(m,"Apr")==0)	mm=4;
+		else if(strcmp(m,"May")==0)	mm=5;
+		else if(strcmp(m,"Jun")==0)	mm=6;
+		else if(strcmp(m,"Jul")==0)	mm=7;
+		else if(strcmp(m,"Aug")==0)	mm=8;
+		else if(strcmp(m,"Sep")==0)	mm=9;
+		else if(strcmp(m,"Oct")==0)	mm=10;
+		else if(strcmp(m,"Nov")==0)	mm=11;
+		else if(strcmp(m,"Dec")==0)	mm=12;
+		else	throw invalid_argument("");
+	}
+	else if(mm<10) {
 		if(strlen(m)!=strlen(format.getMF())) {
 			throw invalid_argument("");
 		}	
@@ -267,7 +296,7 @@ Date::Date(const Date& d)  throw(invalid_argument, domain_error, out_of_range)  
 
 Date::~Date()  //destructor
 {
-	cout<<"Date object Destroyed"<<endl;
+	
 }	
 
 /**************************************************************************************/
@@ -686,6 +715,22 @@ unsigned int Date::operator- (const Date& other)
 Date Date::operator+ (int noOfDays)
 	throw(invalid_argument, domain_error, out_of_range)
 {
+	tm t = {};
+    t.tm_year = static_cast<unsigned int>(year)-1900;
+    t.tm_mon  = static_cast<unsigned int>(month)-1;
+    t.tm_mday = static_cast<unsigned int>(day);
+    t.tm_mday += noOfDays;
+    mktime(&t);
+    Date d;
+    d.year  = static_cast<Year> (1900+t.tm_year);
+    d.month = static_cast<Month>(t.tm_mon+1);
+    d.day   = static_cast<Day>  (t.tm_mday);
+    
+    checkDate( d.day, d.month, d.year );
+    
+    return d;
+    
+	/*
 	int n = dayNumber(*this);
 	n += noOfDays;
 	cout<<"No of days: "<<noOfDays<<endl;
@@ -708,6 +753,7 @@ Date Date::operator+ (int noOfDays)
 		throw out_of_range("");
 	}
 	return d;
+	/***/
 }
 
 
@@ -794,7 +840,8 @@ Date::operator WeekNumber() const                            // ISO 8601 Certifi
 //FORMATS
 void Date::setFormat(DateFormat& df)
 {
-	format=df;
+	format= df;
+	//cout<<format<<endl;
 }
 
 DateFormat& Date::getFormat()
@@ -825,7 +872,11 @@ istream& operator>> (istream& is, Date& d){
 ostream& operator<<(ostream& os, const Date& d){
 	int dd = static_cast<int> (d.day);
 	int mm = static_cast<int> (d.month);
-	if(Date::format.getDF()!=0)
+	
+	if(strcmp(Date::format.getDF(),"0")==0){
+		os<<"*-";
+	}
+	else if(Date::format.getDF()!=0)
 	{
 		if(dd>=10) {
 			os<<dd;
@@ -841,24 +892,18 @@ ostream& operator<<(ostream& os, const Date& d){
 		os<<"-";
 	}
 	
+	string full[12] = {"January","February","March","April","May","June","July","August","September","October","November","December"};
+	string half[12] = {"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"};
+	
 	if(strcmp(Date::format.getMF(),"mmm")==0){
-		switch(mm){
-		case 1:	os<<"Jan";	break;
-		case 2:	os<<"Feb";	break;
-		case 3:	os<<"Mar";	break;
-		case 4:	os<<"Apr";	break;
-		case 5:	os<<"May";	break;
-		case 6:	os<<"Jun";	break;
-		case 7:	os<<"Jul";	break;
-		case 8:	os<<"Aug";	break;
-		case 9:	os<<"Sep";	break;
-		case 10: os<<"Oct"; break;
-		case 11: os<<"Nov";	break;
-		case 12: os<<"Dec";	break;
-		default: os<<"Not valid";
+		if(mm>12 || mm<=0){
+			os<<"Invalid format";
+		}
+		else{
+			os<< half[mm-1];
 		}
 	}
-	else if(Date::format.getMF()!=0)
+	else if(strcmp(Date::format.getMF(),"0")!=0 && Date::format.getMF()!=0)
 	{
 		if(mm>9) {
 			os<<mm;
@@ -873,24 +918,18 @@ ostream& operator<<(ostream& os, const Date& d){
 		}
 	}
 	else{
-		switch(mm){
-		case 1:	os<<"January";	break;
-		case 2:	os<<"February"; break;
-		case 3:	os<<"March";	break;
-		case 4:	os<<"April";	break;
-		case 5:	os<<"May";		break;
-		case 6:	os<<"June";		break;
-		case 7:	os<<"July";		break;
-		case 8:	os<<"August";	break;
-		case 9:	os<<"September";break;
-		case 10: os<<"October"; break;
-		case 11: os<<"November";break;
-		case 12: os<<"December";break;
-		default: os<<"Invalid";
+		if(mm>12 || mm<=0){
+			os<<"Invalid format";
+		}
+		else{
+			os<< full[mm-1];
 		}
 	}
 	
-	if(Date::format.getYF()!=0){
+	if(strcmp(Date::format.getYF(),"0")==0){
+		os<<"-*";
+	}
+	else if(Date::format.getYF()!=0){
 		os<<"-";
 		if(strcmp(Date::format.getYF(),"yy")==0){
 			if(d.year%100<10) {
@@ -901,9 +940,10 @@ ostream& operator<<(ostream& os, const Date& d){
 			}
 		}
 		else {
-			cout<<d.year;
+			os<<d.year;
 		}
 	}
+	
 	return os;
 }
 
