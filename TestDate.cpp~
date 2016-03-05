@@ -17,10 +17,11 @@ void TestDate()
 		++a;
 		cout<<"a = "<<a<<endl;
 		cout<<"Here"<<endl;
-		Date b( D28,Feb,2016 );
+		Date b( D28,Feb,2012 );
 		cout<<"b= "<<b<<endl;
 		//Date b("28-Feb-16");
-		b = b+0;
+		b = b-20;
+		cout<<"b-20 = "<<b<<endl;
 		int n=a-b;
 		cout<<a<<" - "<<b<<" = "<<n<<endl;
 		Date c(D12,Feb,1981);
