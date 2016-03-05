@@ -20,28 +20,26 @@ int noOfHyphens ( string st )
 void checkFormat_NULL( char* df, char* mf, char* yf) 
 	throw ( invalid_argument, domain_error, out_of_range )
 {
-	
-	if(strcmp(df,"0")==0) {
-		;
-	}
-	else if(df!=0 && strcmp(df,"d")!=0 && strcmp(df,"dd")!=0){
-		cout<<"Date Format Assigned - NULL"<<endl;
+	//cout<<df<<" "<<mf<<" "<<yf<<" "<<endl;
+	if(strcmp(df,"0")!=0 && strcmp(df,"d")!=0 && strcmp(df,"dd")!=0){
+		//cout<<"Date Format Assigned - NULL"<<endl;
 		delete[] df;
 		df= NULL;
+		throw invalid_argument("Incorrect format for date");
 	}
-	if(mf!=0 && strcmp(mf,"0")!=0 && strcmp(mf,"mm")!=0 && strcmp(mf,"m")!=0 && strcmp(mf,"mmm")!=0){
-		cout<<"Month Format Assigned - NULL"<<endl;
+	if(strcmp(mf,"0")!=0 && strcmp(mf,"mm")!=0 && strcmp(mf,"m")!=0 && strcmp(mf,"mmm")!=0){
+		//cout<<"Month Format Assigned - NULL"<<endl;
 		delete[] mf;
 		mf= NULL;
+		throw invalid_argument("Incorrect format for month");
 	}
-	if(strcmp(yf,"0")==0){
-		;
-	}
-	else if(yf!=0 && strcmp(yf,"yy")!=0 && strcmp(yf,"yyyy")!=0){
-		cout<<"Year Format Assigned - NULL"<<endl;
+	if(strcmp(yf,"0")!=0 && strcmp(yf,"yy")!=0 && strcmp(yf,"yyyy")!=0){
+		//cout<<"Year Format Assigned - NULL"<<endl;
 		delete[] yf;
 		yf= NULL;
+		throw invalid_argument("Incorrect format for year");
 	} 
+	//cout<<df<<" "<<mf<<" "<<yf<<" "<<endl;
 }	
 
 /*****************************************************/
@@ -66,21 +64,21 @@ void parser ( string form, char* &df, char* &mf, char* &yf )
 		//cout<<"String received: "<<form<<endl;
 		int size1 = first;
 		if(size1 == 0) {
-			throw invalid_argument("");
+			throw invalid_argument("No Date Format Found");
 		}
 		strcpy(df, const_cast<char*> ((form.substr( 0, size1 )).c_str()));
 		//cout<<"Day format assigned: "<<df<<endl;
 	
 		int size2 = second - first - 1 ;
 		if(size1 == 0) {
-			throw invalid_argument("");
+			throw invalid_argument("No Month Format Found");
 		}
 		strcpy(mf ,const_cast<char*> ((form.substr( first + 1, size2 )).c_str()));
 		//cout<<"Month Format assigned: "<<mf<<endl;
 	
 		int size3 = (size-1) - second;
 		if(size1 == 0) {
-			throw invalid_argument("");
+			throw invalid_argument("No Year Format Found");
 		}
 		strcpy(yf , const_cast<char*> ((form.substr( second + 1, size3 )).c_str()));
 		//cout<<"Year format assigned: "<<yf<<endl;
@@ -111,6 +109,7 @@ DateFormat::DateFormat(const char* dForm, const char* mForm, const char* yForm) 
 	}
 	else{
 		strcpy( monthFormat , const_cast<char *> (mForm));
+		//cout<<monthFormat<<endl;
 	}
 	
 	//cout<<"here"<<endl;
@@ -123,6 +122,7 @@ DateFormat::DateFormat(const char* dForm, const char* mForm, const char* yForm) 
 	}
 	else{
 		strcpy( dateFormat , const_cast<char *> (dForm));
+		//cout<<dateFormat<<endl;
 	}
 	
 	//cout<<"here"<<endl;
@@ -135,8 +135,11 @@ DateFormat::DateFormat(const char* dForm, const char* mForm, const char* yForm) 
 	}
 	else{
 		strcpy( yearFormat , const_cast<char *> (yForm));
+		//cout<<yearFormat<<endl;
 	}
+
 	checkFormat_NULL ( dateFormat, monthFormat, yearFormat );
+	//cout<<dateFormat<<" "<<monthFormat<<" "<<yearFormat<<endl;
 }
 
 /*****************************************************/
@@ -149,11 +152,11 @@ DateFormat::DateFormat(const char* format)                                      
 	
 	int n = noOfHyphens (str);
 	if( n != 2 ){
-		cout<<"Format Assigned - NULL-NULL-NULL"<<endl;
+		//cout<<"Format Assigned - NULL-NULL-NULL"<<endl;
 		dateFormat  = NULL;
 		monthFormat = NULL;
 		yearFormat  = NULL;
-		return;
+		throw invalid_argument("No of separators is more than required");
  	}
  	
  	dateFormat = new char[5];

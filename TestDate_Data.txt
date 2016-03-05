@@ -1,0 +1,3043 @@
+
+******************DATE FORMAT CHECKING***********************
+---------Checking by Calling constructor by passing different formats separately----------
+
+DateFormat df( NULL, NULL, NULL );
+Assigned Date Format: 0
+Assigned Month Format: 0
+Assigned Year Format: 0
+
+DateFormat df( NULL, NULL, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( NULL, NULL, yy );
+Assigned Date Format: 0
+Assigned Month Format: 0
+Assigned Year Format: yy
+
+DateFormat df( NULL, NULL, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( NULL, NULL, yyyy );
+Assigned Date Format: 0
+Assigned Month Format: 0
+Assigned Year Format: yyyy
+
+DateFormat df( NULL, NULL, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( NULL, NULL, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( NULL, m, NULL );
+Assigned Date Format: 0
+Assigned Month Format: m
+Assigned Year Format: 0
+
+DateFormat df( NULL, m, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( NULL, m, yy );
+Assigned Date Format: 0
+Assigned Month Format: m
+Assigned Year Format: yy
+
+DateFormat df( NULL, m, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( NULL, m, yyyy );
+Assigned Date Format: 0
+Assigned Month Format: m
+Assigned Year Format: yyyy
+
+DateFormat df( NULL, m, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( NULL, m, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( NULL, mm, NULL );
+Assigned Date Format: 0
+Assigned Month Format: mm
+Assigned Year Format: 0
+
+DateFormat df( NULL, mm, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( NULL, mm, yy );
+Assigned Date Format: 0
+Assigned Month Format: mm
+Assigned Year Format: yy
+
+DateFormat df( NULL, mm, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( NULL, mm, yyyy );
+Assigned Date Format: 0
+Assigned Month Format: mm
+Assigned Year Format: yyyy
+
+DateFormat df( NULL, mm, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( NULL, mm, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( NULL, mmm, NULL );
+Assigned Date Format: 0
+Assigned Month Format: mmm
+Assigned Year Format: 0
+
+DateFormat df( NULL, mmm, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( NULL, mmm, yy );
+Assigned Date Format: 0
+Assigned Month Format: mmm
+Assigned Year Format: yy
+
+DateFormat df( NULL, mmm, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( NULL, mmm, yyyy );
+Assigned Date Format: 0
+Assigned Month Format: mmm
+Assigned Year Format: yyyy
+
+DateFormat df( NULL, mmm, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( NULL, mmm, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( NULL, MM, NULL );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( NULL, MM, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( NULL, MM, yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( NULL, MM, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( NULL, MM, yyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( NULL, MM, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( NULL, MM, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( NULL, 1, NULL );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( NULL, 1, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( NULL, 1, yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( NULL, 1, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( NULL, 1, yyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( NULL, 1, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( NULL, 1, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( NULL, abs, NULL );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( NULL, abs, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( NULL, abs, yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( NULL, abs, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( NULL, abs, yyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( NULL, abs, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( NULL, abs, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( d, NULL, NULL );
+Assigned Date Format: d
+Assigned Month Format: 0
+Assigned Year Format: 0
+
+DateFormat df( d, NULL, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( d, NULL, yy );
+Assigned Date Format: d
+Assigned Month Format: 0
+Assigned Year Format: yy
+
+DateFormat df( d, NULL, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( d, NULL, yyyy );
+Assigned Date Format: d
+Assigned Month Format: 0
+Assigned Year Format: yyyy
+
+DateFormat df( d, NULL, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( d, NULL, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( d, m, NULL );
+Assigned Date Format: d
+Assigned Month Format: m
+Assigned Year Format: 0
+
+DateFormat df( d, m, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( d, m, yy );
+Assigned Date Format: d
+Assigned Month Format: m
+Assigned Year Format: yy
+
+DateFormat df( d, m, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( d, m, yyyy );
+Assigned Date Format: d
+Assigned Month Format: m
+Assigned Year Format: yyyy
+
+DateFormat df( d, m, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( d, m, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( d, mm, NULL );
+Assigned Date Format: d
+Assigned Month Format: mm
+Assigned Year Format: 0
+
+DateFormat df( d, mm, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( d, mm, yy );
+Assigned Date Format: d
+Assigned Month Format: mm
+Assigned Year Format: yy
+
+DateFormat df( d, mm, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( d, mm, yyyy );
+Assigned Date Format: d
+Assigned Month Format: mm
+Assigned Year Format: yyyy
+
+DateFormat df( d, mm, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( d, mm, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( d, mmm, NULL );
+Assigned Date Format: d
+Assigned Month Format: mmm
+Assigned Year Format: 0
+
+DateFormat df( d, mmm, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( d, mmm, yy );
+Assigned Date Format: d
+Assigned Month Format: mmm
+Assigned Year Format: yy
+
+DateFormat df( d, mmm, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( d, mmm, yyyy );
+Assigned Date Format: d
+Assigned Month Format: mmm
+Assigned Year Format: yyyy
+
+DateFormat df( d, mmm, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( d, mmm, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( d, MM, NULL );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( d, MM, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( d, MM, yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( d, MM, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( d, MM, yyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( d, MM, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( d, MM, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( d, 1, NULL );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( d, 1, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( d, 1, yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( d, 1, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( d, 1, yyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( d, 1, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( d, 1, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( d, abs, NULL );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( d, abs, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( d, abs, yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( d, abs, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( d, abs, yyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( d, abs, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( d, abs, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( dd, NULL, NULL );
+Assigned Date Format: dd
+Assigned Month Format: 0
+Assigned Year Format: 0
+
+DateFormat df( dd, NULL, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( dd, NULL, yy );
+Assigned Date Format: dd
+Assigned Month Format: 0
+Assigned Year Format: yy
+
+DateFormat df( dd, NULL, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( dd, NULL, yyyy );
+Assigned Date Format: dd
+Assigned Month Format: 0
+Assigned Year Format: yyyy
+
+DateFormat df( dd, NULL, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( dd, NULL, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( dd, m, NULL );
+Assigned Date Format: dd
+Assigned Month Format: m
+Assigned Year Format: 0
+
+DateFormat df( dd, m, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( dd, m, yy );
+Assigned Date Format: dd
+Assigned Month Format: m
+Assigned Year Format: yy
+
+DateFormat df( dd, m, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( dd, m, yyyy );
+Assigned Date Format: dd
+Assigned Month Format: m
+Assigned Year Format: yyyy
+
+DateFormat df( dd, m, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( dd, m, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( dd, mm, NULL );
+Assigned Date Format: dd
+Assigned Month Format: mm
+Assigned Year Format: 0
+
+DateFormat df( dd, mm, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( dd, mm, yy );
+Assigned Date Format: dd
+Assigned Month Format: mm
+Assigned Year Format: yy
+
+DateFormat df( dd, mm, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( dd, mm, yyyy );
+Assigned Date Format: dd
+Assigned Month Format: mm
+Assigned Year Format: yyyy
+
+DateFormat df( dd, mm, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( dd, mm, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( dd, mmm, NULL );
+Assigned Date Format: dd
+Assigned Month Format: mmm
+Assigned Year Format: 0
+
+DateFormat df( dd, mmm, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( dd, mmm, yy );
+Assigned Date Format: dd
+Assigned Month Format: mmm
+Assigned Year Format: yy
+
+DateFormat df( dd, mmm, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( dd, mmm, yyyy );
+Assigned Date Format: dd
+Assigned Month Format: mmm
+Assigned Year Format: yyyy
+
+DateFormat df( dd, mmm, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( dd, mmm, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( dd, MM, NULL );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( dd, MM, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( dd, MM, yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( dd, MM, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( dd, MM, yyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( dd, MM, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( dd, MM, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( dd, 1, NULL );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( dd, 1, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( dd, 1, yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( dd, 1, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( dd, 1, yyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( dd, 1, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( dd, 1, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( dd, abs, NULL );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( dd, abs, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( dd, abs, yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( dd, abs, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( dd, abs, yyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( dd, abs, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( dd, abs, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( ddd, NULL, NULL );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( ddd, NULL, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( ddd, NULL, yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( ddd, NULL, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( ddd, NULL, yyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( ddd, NULL, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( ddd, NULL, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( ddd, m, NULL );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( ddd, m, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( ddd, m, yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( ddd, m, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( ddd, m, yyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( ddd, m, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( ddd, m, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( ddd, mm, NULL );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( ddd, mm, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( ddd, mm, yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( ddd, mm, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( ddd, mm, yyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( ddd, mm, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( ddd, mm, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( ddd, mmm, NULL );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( ddd, mmm, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( ddd, mmm, yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( ddd, mmm, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( ddd, mmm, yyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( ddd, mmm, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( ddd, mmm, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( ddd, MM, NULL );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( ddd, MM, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( ddd, MM, yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( ddd, MM, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( ddd, MM, yyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( ddd, MM, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( ddd, MM, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( ddd, 1, NULL );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( ddd, 1, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( ddd, 1, yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( ddd, 1, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( ddd, 1, yyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( ddd, 1, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( ddd, 1, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( ddd, abs, NULL );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( ddd, abs, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( ddd, abs, yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( ddd, abs, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( ddd, abs, yyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( ddd, abs, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( ddd, abs, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, NULL, NULL );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, NULL, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, NULL, yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, NULL, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, NULL, yyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, NULL, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, NULL, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, m, NULL );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, m, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, m, yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, m, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, m, yyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, m, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, m, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, mm, NULL );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, mm, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, mm, yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, mm, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, mm, yyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, mm, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, mm, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, mmm, NULL );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, mmm, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, mmm, yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, mmm, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, mmm, yyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, mmm, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, mmm, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, MM, NULL );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, MM, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, MM, yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, MM, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, MM, yyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, MM, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, MM, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, 1, NULL );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, 1, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, 1, yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, 1, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, 1, yyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, 1, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, 1, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, abs, NULL );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, abs, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, abs, yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, abs, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, abs, yyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, abs, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( a, abs, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, NULL, NULL );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, NULL, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, NULL, yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, NULL, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, NULL, yyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, NULL, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, NULL, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, m, NULL );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, m, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, m, yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, m, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, m, yyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, m, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, m, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, mm, NULL );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, mm, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, mm, yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, mm, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, mm, yyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, mm, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, mm, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, mmm, NULL );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, mmm, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, mmm, yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, mmm, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, mmm, yyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, mmm, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, mmm, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, MM, NULL );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, MM, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, MM, yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, MM, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, MM, yyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, MM, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, MM, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, 1, NULL );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, 1, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, 1, yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, 1, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, 1, yyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, 1, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, 1, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, abs, NULL );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, abs, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, abs, yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, abs, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, abs, yyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, abs, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 123, abs, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, NULL, NULL );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, NULL, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, NULL, yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, NULL, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, NULL, yyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, NULL, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, NULL, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, m, NULL );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, m, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, m, yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, m, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, m, yyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, m, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, m, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, mm, NULL );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, mm, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, mm, yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, mm, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, mm, yyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, mm, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, mm, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, mmm, NULL );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, mmm, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, mmm, yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, mmm, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, mmm, yyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, mmm, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, mmm, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, MM, NULL );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, MM, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, MM, yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, MM, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, MM, yyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, MM, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, MM, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, 1, NULL );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, 1, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, 1, yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, 1, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, 1, yyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, 1, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, 1, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, abs, NULL );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, abs, y );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, abs, yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, abs, yyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, abs, yyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, abs, 2 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( 1, abs, aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+********************DONE*************************
+
+
+
+---------Checking by Calling constructor by passing format string altogether----------
+
+DateFormat df( --  );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( --yy );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( --yyyy );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( ---yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( ---dd );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( --aa );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( --12 );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( ---0 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -m-  );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -m-yy );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -m-yyyy );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -m--yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -m--dd );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -m-aa );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -m-12 );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -m--0 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -mm-  );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -mm-yy );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -mm-yyyy );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -mm--yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -mm--dd );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -mm-aa );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -mm-12 );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -mm--0 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -mmm-  );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -mmm-yy );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -mmm-yyyy );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -mmm--yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -mmm--dd );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -mmm-aa );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -mmm-12 );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -mmm--0 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -mm  );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -mmyy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -mmyyyy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -mm-yy );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -mm-dd );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -mmaa );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -mm12 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -mm-0 );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -   );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( - yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( - yyyy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( - -yy );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( - -dd );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( - aa );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( - 12 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( - -0 );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -0  );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -0yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -0yyyy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -0-yy );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -0-dd );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -0aa );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -012 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -0-0 );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( --dd  );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( --ddyy );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( --ddyyyy );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( --dd-yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( --dd-dd );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( --ddaa );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( --dd12 );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( --dd-0 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d--  );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( d--yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( d--yyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( d---yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d---dd );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d--aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( d--12 );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( d---0 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d-m-  );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( d-m-yy );
+Assigned Date Format: d
+Assigned Month Format: m
+Assigned Year Format: yy
+
+DateFormat df( d-m-yyyy );
+Assigned Date Format: d
+Assigned Month Format: m
+Assigned Year Format: yyyy
+
+DateFormat df( d-m--yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d-m--dd );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d-m-aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( d-m-12 );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( d-m--0 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d-mm-  );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( d-mm-yy );
+Assigned Date Format: d
+Assigned Month Format: mm
+Assigned Year Format: yy
+
+DateFormat df( d-mm-yyyy );
+Assigned Date Format: d
+Assigned Month Format: mm
+Assigned Year Format: yyyy
+
+DateFormat df( d-mm--yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d-mm--dd );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d-mm-aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( d-mm-12 );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( d-mm--0 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d-mmm-  );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( d-mmm-yy );
+Assigned Date Format: d
+Assigned Month Format: mmm
+Assigned Year Format: yy
+
+DateFormat df( d-mmm-yyyy );
+Assigned Date Format: d
+Assigned Month Format: mmm
+Assigned Year Format: yyyy
+
+DateFormat df( d-mmm--yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d-mmm--dd );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d-mmm-aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( d-mmm-12 );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( d-mmm--0 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d-mm  );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d-mmyy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d-mmyyyy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d-mm-yy );
+Assigned Date Format: d
+Assigned Month Format: mm
+Assigned Year Format: yy
+
+DateFormat df( d-mm-dd );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( d-mmaa );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d-mm12 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d-mm-0 );
+Assigned Date Format: d
+Assigned Month Format: mm
+Assigned Year Format: 0
+
+DateFormat df( d-   );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d- yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d- yyyy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d- -yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( d- -dd );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( d- aa );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d- 12 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d- -0 );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( d-0  );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d-0yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d-0yyyy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d-0-yy );
+Assigned Date Format: d
+Assigned Month Format: 0
+Assigned Year Format: yy
+
+DateFormat df( d-0-dd );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( d-0aa );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d-012 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d-0-0 );
+Assigned Date Format: d
+Assigned Month Format: 0
+Assigned Year Format: 0
+
+DateFormat df( d--dd  );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( d--ddyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( d--ddyyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( d--dd-yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d--dd-dd );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d--ddaa );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( d--dd12 );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( d--dd-0 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dd--  );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( dd--yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( dd--yyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( dd---yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dd---dd );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dd--aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( dd--12 );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( dd---0 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dd-m-  );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( dd-m-yy );
+Assigned Date Format: dd
+Assigned Month Format: m
+Assigned Year Format: yy
+
+DateFormat df( dd-m-yyyy );
+Assigned Date Format: dd
+Assigned Month Format: m
+Assigned Year Format: yyyy
+
+DateFormat df( dd-m--yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dd-m--dd );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dd-m-aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( dd-m-12 );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( dd-m--0 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dd-mm-  );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( dd-mm-yy );
+Assigned Date Format: dd
+Assigned Month Format: mm
+Assigned Year Format: yy
+
+DateFormat df( dd-mm-yyyy );
+Assigned Date Format: dd
+Assigned Month Format: mm
+Assigned Year Format: yyyy
+
+DateFormat df( dd-mm--yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dd-mm--dd );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dd-mm-aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( dd-mm-12 );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( dd-mm--0 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dd-mmm-  );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( dd-mmm-yy );
+Assigned Date Format: dd
+Assigned Month Format: mmm
+Assigned Year Format: yy
+
+DateFormat df( dd-mmm-yyyy );
+Assigned Date Format: dd
+Assigned Month Format: mmm
+Assigned Year Format: yyyy
+
+DateFormat df( dd-mmm--yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dd-mmm--dd );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dd-mmm-aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( dd-mmm-12 );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( dd-mmm--0 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dd-mm  );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dd-mmyy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dd-mmyyyy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dd-mm-yy );
+Assigned Date Format: dd
+Assigned Month Format: mm
+Assigned Year Format: yy
+
+DateFormat df( dd-mm-dd );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( dd-mmaa );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dd-mm12 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dd-mm-0 );
+Assigned Date Format: dd
+Assigned Month Format: mm
+Assigned Year Format: 0
+
+DateFormat df( dd-   );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dd- yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dd- yyyy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dd- -yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( dd- -dd );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( dd- aa );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dd- 12 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dd- -0 );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( dd-0  );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dd-0yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dd-0yyyy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dd-0-yy );
+Assigned Date Format: dd
+Assigned Month Format: 0
+Assigned Year Format: yy
+
+DateFormat df( dd-0-dd );
+!! INVALID ARGUMENT ERROR: Incorrect format for year
+
+DateFormat df( dd-0aa );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dd-012 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dd-0-0 );
+Assigned Date Format: dd
+Assigned Month Format: 0
+Assigned Year Format: 0
+
+DateFormat df( dd--dd  );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( dd--ddyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( dd--ddyyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( dd--dd-yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dd--dd-dd );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dd--ddaa );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( dd--dd12 );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( dd--dd-0 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d-  );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d-yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d-yyyy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d--yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( d--dd );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( d-aa );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d-12 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d--0 );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( dm-  );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dm-yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dm-yyyy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dm--yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( dm--dd );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( dm-aa );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dm-12 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dm--0 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( dmm-  );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dmm-yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dmm-yyyy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dmm--yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( dmm--dd );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( dmm-aa );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dmm-12 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dmm--0 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( dmmm-  );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dmmm-yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dmmm-yyyy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dmmm--yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( dmmm--dd );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( dmmm-aa );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dmmm-12 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dmmm--0 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( dmm  );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dmmyy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dmmyyyy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dmm-yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dmm-dd );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dmmaa );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dmm12 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( dmm-0 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d   );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d yyyy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d -yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d -dd );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d aa );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d 12 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d -0 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d0  );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d0yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d0yyyy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d0-yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d0-dd );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d0aa );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d012 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d0-0 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d-dd  );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d-ddyy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d-ddyyyy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d-dd-yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( d-dd-dd );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( d-ddaa );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d-dd12 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( d-dd-0 );
+!! INVALID ARGUMENT ERROR: Incorrect format for month
+
+DateFormat df( -d-  );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -d-yy );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -d-yyyy );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -d--yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -d--dd );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -d-aa );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -d-12 );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -d--0 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -dm-  );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -dm-yy );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -dm-yyyy );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -dm--yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -dm--dd );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -dm-aa );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -dm-12 );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -dm--0 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -dmm-  );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -dmm-yy );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -dmm-yyyy );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -dmm--yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -dmm--dd );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -dmm-aa );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -dmm-12 );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -dmm--0 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -dmmm-  );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -dmmm-yy );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -dmmm-yyyy );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -dmmm--yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -dmmm--dd );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -dmmm-aa );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -dmmm-12 );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -dmmm--0 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -dmm  );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -dmmyy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -dmmyyyy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -dmm-yy );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -dmm-dd );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -dmmaa );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -dmm12 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -dmm-0 );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -d   );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -d yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -d yyyy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -d -yy );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -d -dd );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -d aa );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -d 12 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -d -0 );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -d0  );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -d0yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -d0yyyy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -d0-yy );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -d0-dd );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -d0aa );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -d012 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -d0-0 );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -d-dd  );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -d-ddyy );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -d-ddyyyy );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -d-dd-yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -d-dd-dd );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( -d-ddaa );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -d-dd12 );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df( -d-dd-0 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( mm--  );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( mm--yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( mm--yyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( mm---yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( mm---dd );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( mm--aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( mm--12 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( mm---0 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( mm-m-  );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( mm-m-yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( mm-m-yyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( mm-m--yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( mm-m--dd );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( mm-m-aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( mm-m-12 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( mm-m--0 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( mm-mm-  );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( mm-mm-yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( mm-mm-yyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( mm-mm--yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( mm-mm--dd );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( mm-mm-aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( mm-mm-12 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( mm-mm--0 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( mm-mmm-  );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( mm-mmm-yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( mm-mmm-yyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( mm-mmm--yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( mm-mmm--dd );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( mm-mmm-aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( mm-mmm-12 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( mm-mmm--0 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( mm-mm  );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( mm-mmyy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( mm-mmyyyy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( mm-mm-yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( mm-mm-dd );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( mm-mmaa );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( mm-mm12 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( mm-mm-0 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( mm-   );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( mm- yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( mm- yyyy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( mm- -yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( mm- -dd );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( mm- aa );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( mm- 12 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( mm- -0 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( mm-0  );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( mm-0yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( mm-0yyyy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( mm-0-yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( mm-0-dd );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( mm-0aa );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( mm-012 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( mm-0-0 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( mm--dd  );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( mm--ddyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( mm--ddyyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( mm--dd-yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( mm--dd-dd );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( mm--ddaa );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( mm--dd12 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( mm--dd-0 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( yy--  );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( yy--yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( yy--yyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( yy---yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( yy---dd );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( yy--aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( yy--12 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( yy---0 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( yy-m-  );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( yy-m-yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( yy-m-yyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( yy-m--yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( yy-m--dd );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( yy-m-aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( yy-m-12 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( yy-m--0 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( yy-mm-  );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( yy-mm-yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( yy-mm-yyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( yy-mm--yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( yy-mm--dd );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( yy-mm-aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( yy-mm-12 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( yy-mm--0 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( yy-mmm-  );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( yy-mmm-yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( yy-mmm-yyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( yy-mmm--yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( yy-mmm--dd );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( yy-mmm-aa );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( yy-mmm-12 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( yy-mmm--0 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( yy-mm  );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( yy-mmyy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( yy-mmyyyy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( yy-mm-yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( yy-mm-dd );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( yy-mmaa );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( yy-mm12 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( yy-mm-0 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( yy-   );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( yy- yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( yy- yyyy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( yy- -yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( yy- -dd );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( yy- aa );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( yy- 12 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( yy- -0 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( yy-0  );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( yy-0yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( yy-0yyyy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( yy-0-yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( yy-0-dd );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( yy-0aa );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( yy-012 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( yy-0-0 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( yy--dd  );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( yy--ddyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( yy--ddyyyy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( yy--dd-yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( yy--dd-dd );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df( yy--ddaa );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( yy--dd12 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df( yy--dd-0 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(  -  );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(  -yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(  -yyyy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(  --yy );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df(  --dd );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df(  -aa );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(  -12 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(  --0 );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df(  m-  );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(  m-yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(  m-yyyy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(  m--yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df(  m--dd );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df(  m-aa );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(  m-12 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(  m--0 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df(  mm-  );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(  mm-yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(  mm-yyyy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(  mm--yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df(  mm--dd );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df(  mm-aa );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(  mm-12 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(  mm--0 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df(  mmm-  );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(  mmm-yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(  mmm-yyyy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(  mmm--yy );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df(  mmm--dd );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df(  mmm-aa );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(  mmm-12 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(  mmm--0 );
+!! INVALID ARGUMENT ERROR: Incorrect format for date
+
+DateFormat df(  mm  );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(  mmyy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(  mmyyyy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(  mm-yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(  mm-dd );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(  mmaa );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(  mm12 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(  mm-0 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(     );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(   yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(   yyyy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(   -yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(   -dd );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(   aa );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(   12 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(   -0 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(  0  );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(  0yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(  0yyyy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(  0-yy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(  0-dd );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(  0aa );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(  012 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(  0-0 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(  -dd  );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(  -ddyy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(  -ddyyyy );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(  -dd-yy );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df(  -dd-dd );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+DateFormat df(  -ddaa );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(  -dd12 );
+!! INVALID ARGUMENT ERROR: No of separators is more than required
+
+DateFormat df(  -dd-0 );
+!! INVALID ARGUMENT ERROR: No Date Format Found
+
+********************DONE*************************
+
+----------------------------------------------------------
+
+Testing Date Constructor Date(day d,month m ,year y)
+
+Out of Range Error with day  - 1 month- 1 year- 1949
+Date  constructed with day   - 1 month- 1 year- 1950
+Date  constructed with day   - 1 month- 1 year- 2000
+Date  constructed with day   - 1 month- 1 year- 2049
+Out of Range Error with day  - 1 month- 1 year- 2050
+Out of Range Error with day  - 1 month- 2 year- 1949
+Date  constructed with day   - 1 month- 2 year- 1950
+Date  constructed with day   - 1 month- 2 year- 2000
+Date  constructed with day   - 1 month- 2 year- 2049
+Out of Range Error with day  - 1 month- 2 year- 2050
+Out of Range Error with day  - 1 month- 7 year- 1949
+Date  constructed with day   - 1 month- 7 year- 1950
+Date  constructed with day   - 1 month- 7 year- 2000
+Date  constructed with day   - 1 month- 7 year- 2049
+Out of Range Error with day  - 1 month- 7 year- 2050
+Out of Range Error with day  - 1 month- 11 year- 1949
+Date  constructed with day   - 1 month- 11 year- 1950
+Date  constructed with day   - 1 month- 11 year- 2000
+Date  constructed with day   - 1 month- 11 year- 2049
+Out of Range Error with day  - 1 month- 11 year- 2050
+Out of Range Error with day  - 28 month- 1 year- 1949
+Date  constructed with day   - 28 month- 1 year- 1950
+Date  constructed with day   - 28 month- 1 year- 2000
+Date  constructed with day   - 28 month- 1 year- 2049
+Out of Range Error with day  - 28 month- 1 year- 2050
+Out of Range Error with day  - 28 month- 2 year- 1949
+Date  constructed with day   - 28 month- 2 year- 1950
+Date  constructed with day   - 28 month- 2 year- 2000
+Date  constructed with day   - 28 month- 2 year- 2049
+Out of Range Error with day  - 28 month- 2 year- 2050
+Out of Range Error with day  - 28 month- 7 year- 1949
+Date  constructed with day   - 28 month- 7 year- 1950
+Date  constructed with day   - 28 month- 7 year- 2000
+Date  constructed with day   - 28 month- 7 year- 2049
+Out of Range Error with day  - 28 month- 7 year- 2050
+Out of Range Error with day  - 28 month- 11 year- 1949
+Date  constructed with day   - 28 month- 11 year- 1950
+Date  constructed with day   - 28 month- 11 year- 2000
+Date  constructed with day   - 28 month- 11 year- 2049
+Out of Range Error with day  - 28 month- 11 year- 2050
+Out of Range Error with day  - 29 month- 1 year- 1949
+Date  constructed with day   - 29 month- 1 year- 1950
+Date  constructed with day   - 29 month- 1 year- 2000
+Date  constructed with day   - 29 month- 1 year- 2049
+Out of Range Error with day  - 29 month- 1 year- 2050
+Out of Range Error with day  - 29 month- 2 year- 1949
+Domain Error with day        - 29 month- 2 year- 1950
+Domain Error with day        - 29 month- 2 year- 2000
+Domain Error with day        - 29 month- 2 year- 2049
+Out of Range Error with day  - 29 month- 2 year- 2050
+Out of Range Error with day  - 29 month- 7 year- 1949
+Date  constructed with day   - 29 month- 7 year- 1950
+Date  constructed with day   - 29 month- 7 year- 2000
+Date  constructed with day   - 29 month- 7 year- 2049
+Out of Range Error with day  - 29 month- 7 year- 2050
+Out of Range Error with day  - 29 month- 11 year- 1949
+Date  constructed with day   - 29 month- 11 year- 1950
+Date  constructed with day   - 29 month- 11 year- 2000
+Date  constructed with day   - 29 month- 11 year- 2049
+Out of Range Error with day  - 29 month- 11 year- 2050
+Out of Range Error with day  - 31 month- 1 year- 1949
+Date  constructed with day   - 31 month- 1 year- 1950
+Date  constructed with day   - 31 month- 1 year- 2000
+Date  constructed with day   - 31 month- 1 year- 2049
+Out of Range Error with day  - 31 month- 1 year- 2050
+Out of Range Error with day  - 31 month- 2 year- 1949
+Domain Error with day        - 31 month- 2 year- 1950
+Domain Error with day        - 31 month- 2 year- 2000
+Domain Error with day        - 31 month- 2 year- 2049
+Out of Range Error with day  - 31 month- 2 year- 2050
+Out of Range Error with day  - 31 month- 7 year- 1949
+Date  constructed with day   - 31 month- 7 year- 1950
+Date  constructed with day   - 31 month- 7 year- 2000
+Date  constructed with day   - 31 month- 7 year- 2049
+Out of Range Error with day  - 31 month- 7 year- 2050
+Out of Range Error with day  - 31 month- 11 year- 1949
+Domain Error with day        - 31 month- 11 year- 1950
+Domain Error with day        - 31 month- 11 year- 2000
+Domain Error with day        - 31 month- 11 year- 2049
+Out of Range Error with day  - 31 month- 11 year- 2050
+
+Testing Date Constructor Date(const char*)
+
+Invalid Argument Error with day-  1 month- 1 year- 1949
+Invalid Argument Error with day-  1 month- 1 year- 1950
+Invalid Argument Error with day-  1 month- 1 year- 2000
+Invalid Argument Error with day-  1 month- 2 year- 1949
+Invalid Argument Error with day-  1 month- 2 year- 1950
+Invalid Argument Error with day-  1 month- 2 year- 2000
+Out of Range Error with day  -    1 month- 7 year- 1949
+Date Constructed with             29-03-2016
+Out of Range Error with day  -    1 month- 7 year- 2000
+Out of Range Error with day  -    1 month- 11 year- 1949
+Invalid Argument Error with day-  1 month- 11 year- 1950
+Out of Range Error with day  -    1 month- 11 year- 2000
+Invalid Argument Error with day-  28 month- 1 year- 1949
+Invalid Argument Error with day-  28 month- 1 year- 1950
+Invalid Argument Error with day-  28 month- 1 year- 2000
+Invalid Argument Error with day-  28 month- 2 year- 1949
+Invalid Argument Error with day-  28 month- 2 year- 1950
+Invalid Argument Error with day-  28 month- 2 year- 2000
+Out of Range Error with day  -    28 month- 7 year- 1949
+Date Constructed with             31-03-2016
+Out of Range Error with day  -    28 month- 7 year- 2000
+Out of Range Error with day  -    28 month- 11 year- 1949
+Invalid Argument Error with day-  28 month- 11 year- 1950
+Out of Range Error with day  -    28 month- 11 year- 2000
+Invalid Argument Error with day-  29 month- 1 year- 1949
+Invalid Argument Error with day-  29 month- 1 year- 1950
+Invalid Argument Error with day-  29 month- 1 year- 2000
+Invalid Argument Error with day-  29 month- 2 year- 1949
+Invalid Argument Error with day-  29 month- 2 year- 1950
+Invalid Argument Error with day-  29 month- 2 year- 2000
+Out of Range Error with day  -    29 month- 7 year- 1949
+Domain Error with day       - 29 month- 7 year- 1950
+Out of Range Error with day  -    29 month- 7 year- 2000
+Out of Range Error with day  -    29 month- 11 year- 1949
+Invalid Argument Error with day-  29 month- 11 year- 1950
+Out of Range Error with day  -    29 month- 11 year- 2000
+Date Constructed with             29-1-99
+Out of Range Error with day  -    1 month- 1 year- 1950
+Out of Range Error with day  -    1 month- 1 year- 2000
+Invalid Argument Error with day-  1 month- 2 year- 1949
+Invalid Argument Error with day-  1 month- 2 year- 1950
+Invalid Argument Error with day-  1 month- 2 year- 2000
+Invalid Argument Error with day-  1 month- 7 year- 1949
+Invalid Argument Error with day-  1 month- 7 year- 1950
+Invalid Argument Error with day-  1 month- 7 year- 2000
+Invalid Argument Error with day-  1 month- 11 year- 1949
+Out of Range Error with day  -    1 month- 11 year- 1950
+Out of Range Error with day  -    1 month- 11 year- 2000
+Date Constructed with             31-1-99
+Out of Range Error with day  -    28 month- 1 year- 1950
+Out of Range Error with day  -    28 month- 1 year- 2000
+Invalid Argument Error with day-  28 month- 2 year- 1949
+Invalid Argument Error with day-  28 month- 2 year- 1950
+Invalid Argument Error with day-  28 month- 2 year- 2000
+Invalid Argument Error with day-  28 month- 7 year- 1949
+Invalid Argument Error with day-  28 month- 7 year- 1950
+Invalid Argument Error with day-  28 month- 7 year- 2000
+Invalid Argument Error with day-  28 month- 11 year- 1949
+Out of Range Error with day  -    28 month- 11 year- 1950
+Out of Range Error with day  -    28 month- 11 year- 2000
+Domain Error with day       - 29 month- 1 year- 1949
+Out of Range Error with day  -    29 month- 1 year- 1950
+Out of Range Error with day  -    29 month- 1 year- 2000
+Invalid Argument Error with day-  29 month- 2 year- 1949
+Invalid Argument Error with day-  29 month- 2 year- 1950
+Invalid Argument Error with day-  29 month- 2 year- 2000
+Invalid Argument Error with day-  29 month- 7 year- 1949
+Invalid Argument Error with day-  29 month- 7 year- 1950
+Invalid Argument Error with day-  29 month- 7 year- 2000
+Invalid Argument Error with day-  29 month- 11 year- 1949
+Out of Range Error with day  -    29 month- 11 year- 1950
+Out of Range Error with day  -    29 month- 11 year- 2000
+Date Constructed with             29-1-99
+Out of Range Error with day  -    1 month- 1 year- 1950
+Out of Range Error with day  -    1 month- 1 year- 2000
+Invalid Argument Error with day-  1 month- 2 year- 1949
+Invalid Argument Error with day-  1 month- 2 year- 1950
+Invalid Argument Error with day-  1 month- 2 year- 2000
+Invalid Argument Error with day-  1 month- 7 year- 1949
+Invalid Argument Error with day-  1 month- 7 year- 1950
+Invalid Argument Error with day-  1 month- 7 year- 2000
+Invalid Argument Error with day-  1 month- 11 year- 1949
+Out of Range Error with day  -    1 month- 11 year- 1950
+Out of Range Error with day  -    1 month- 11 year- 2000
+Date Constructed with             31-1-99
+Out of Range Error with day  -    28 month- 1 year- 1950
+Out of Range Error with day  -    28 month- 1 year- 2000
+Invalid Argument Error with day-  28 month- 2 year- 1949
+Invalid Argument Error with day-  28 month- 2 year- 1950
+Invalid Argument Error with day-  28 month- 2 year- 2000
+Invalid Argument Error with day-  28 month- 7 year- 1949
+Invalid Argument Error with day-  28 month- 7 year- 1950
+Invalid Argument Error with day-  28 month- 7 year- 2000
+Invalid Argument Error with day-  28 month- 11 year- 1949
+Out of Range Error with day  -    28 month- 11 year- 1950
+Out of Range Error with day  -    28 month- 11 year- 2000
+Domain Error with day       - 29 month- 1 year- 1949
+Out of Range Error with day  -    29 month- 1 year- 1950
+Out of Range Error with day  -    29 month- 1 year- 2000
+Invalid Argument Error with day-  29 month- 2 year- 1949
+Invalid Argument Error with day-  29 month- 2 year- 1950
+Invalid Argument Error with day-  29 month- 2 year- 2000
+Invalid Argument Error with day-  29 month- 7 year- 1949
+Invalid Argument Error with day-  29 month- 7 year- 1950
+Invalid Argument Error with day-  29 month- 7 year- 2000
+Invalid Argument Error with day-  29 month- 11 year- 1949
+Out of Range Error with day  -    29 month- 11 year- 1950
+Out of Range Error with day  -    29 month- 11 year- 2000
+-------------------------------------------------------------------------
+Testing Unary Arithmetic Operators true statements will be printed
+
+++28-02-1996 is 29-02-1996
+--28-02-1996 is 27-02-1996
+28-02-1996++ is 06-03-1996
+28-02-1996-- is 21-02-1996
+
+Testing Unary Arithmetic Operators true statements will be printed
+
+++31-12-2049 is 01-01-2050
+--31-12-2049 is 30-12-2049
+31-12-2049++ is 07-01-2050
+31-12-2049-- is 24-12-2049
+
+Testing Unary Arithmetic Operators true statements will be printed
+
+++01-01-1950 is 02-01-1950
+--01-01-1950 is Out Of Range Error --Operator
+01-01-1950++ is 08-01-1950
+01-01-1950-- is Out Of Range Error Operator--
+-------------------------------------------------------------
+Testing Adding Number Of Days true statements will be printed
+
+Domain Error
+Out of range for 31-12-2049 + 1
+01-01-1950 + 1 is 02-01-1950
+28-02-1996 + 4 is 03-03-1996
+Out of range for 31-12-2049 + 4
+01-01-1950 + 4 is 05-01-1950
+28-02-1996 + 555 is 05-09-1997
+Out of range for 31-12-2049 + 555
+01-01-1950 + 555 is 10-07-1951
+28-02-1996 + -365 is 28-02-1995
+31-12-2049 + -365 is 31-12-2048
+Out of range for 01-01-1950 + -365
+28-02-1996 + 366 is 28-02-1997
+Out of range for 31-12-2049 + 366
+01-01-1950 + 366 is 02-01-1951
+-------------------------------------------------------------------------
+Testing Difference in days true statements will be printed
+
+03-04-2016 - 03-04-2015 is 366
+03-04-2015 - 03-04-2016 is 366
+
+Testing Difference in days true statements will be printed
+
+03-04-2017 - 03-04-2015 is 731
+03-04-2015 - 03-04-2017 is 731
+
+Testing Difference in days true statements will be printed
+
+03-04-2016 - 03-04-2017 is 365
+03-04-2017 - 03-04-2016 is 365
+
+-------------------------------------------------------------------------
+Testing LeapYear Function 
+
+03-04-2016 is a leap year
+
+Testing LeapYear Function 
+
+03-04-2015 is not a leap year
+
+Testing LeapYear Function 
+
+03-04-2017 is not a leap year
+
+-------------------------------------------------------------------------
+Testing Cast Operators 
+
+03-04-2016 as WeekNumber is 13
+03-04-2016 as Month is 4
+03-04-2016 as WeekDay is 7
+
+Testing Cast Operators 
+
+03-04-2015 as WeekNumber is 14
+03-04-2015 as Month is 4
+03-04-2015 as WeekDay is 5
+
+Testing Cast Operators 
+
+03-04-2017 as WeekNumber is 13
+03-04-2017 as Month is 4
+03-04-2017 as WeekDay is 1
+
+-------------------------------------------------------------------------
+Checking Relational Operators Only the Statements that are true will be printed
+
+03-04-2016 is == to 03-04-2016
+03-04-2016 is <= than 03-04-2016
+03-04-2016 is >= than 03-04-2016
+
+Checking Relational Operators Only the Statements that are true will be printed
+
+03-04-2016 is != to 03-04-2015
+03-04-2016 is >= than 03-04-2015
+03-04-2016 is > than 03-04-2015
+
+Checking Relational Operators Only the Statements that are true will be printed
+
+03-04-2016 is != to 03-04-2017
+03-04-2016 is <= than 03-04-2017
+03-04-2016 is < than 03-04-2017
+
+Checking Relational Operators Only the Statements that are true will be printed
+
+03-04-2015 is != to 03-04-2016
+03-04-2015 is <= than 03-04-2016
+03-04-2015 is < than 03-04-2016
+
+Checking Relational Operators Only the Statements that are true will be printed
+
+03-04-2015 is == to 03-04-2015
+03-04-2015 is <= than 03-04-2015
+03-04-2015 is >= than 03-04-2015
+
+Checking Relational Operators Only the Statements that are true will be printed
+
+03-04-2015 is != to 03-04-2017
+03-04-2015 is <= than 03-04-2017
+03-04-2015 is < than 03-04-2017
+
+Checking Relational Operators Only the Statements that are true will be printed
+
+03-04-2017 is != to 03-04-2016
+03-04-2017 is >= than 03-04-2016
+03-04-2017 is > than 03-04-2016
+
+Checking Relational Operators Only the Statements that are true will be printed
+
+03-04-2017 is != to 03-04-2015
+03-04-2017 is >= than 03-04-2015
+03-04-2017 is > than 03-04-2015
+
+Checking Relational Operators Only the Statements that are true will be printed
+
+03-04-2017 is == to 03-04-2017
+03-04-2017 is <= than 03-04-2017
+03-04-2017 is >= than 03-04-2017
+
+-------------------------------------------------------------------------
+Checking the format setter and getter 
+The default format dd-mmm-yy is set  using setFormat
+The output  is 05-Mar-16
+Changing the format using getFormat as reference is returned by that 
+The output in this format is 05-03-2016
+The output in this format is 5-3-16
+Set and Get Format Are Working Correctly
+
+*******************************************************************************
+*******************************************************************************
+*******************************************************************************
+*******************************************************************************
+
+Code Verified for all inputs and test-cases.
+*******************************************************************************
+*******************************************************************************
