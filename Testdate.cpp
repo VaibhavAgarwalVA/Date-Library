@@ -158,80 +158,83 @@ void DateFormatConstructor()
 
 void DateConstructor()
 {
-	Day day[]={D01,D28,D29,D31};
-	Month month[]={Jan,Feb,Jul,Nov};
-	Year year[]={1949,1950,2000,2049,2050};
+	int day[]={1,3,28,29,30,31,32,-1};
+	int month[]={1,2,3,7,11,12,0,14};
+	int year[]={1949,1950,2011,2000,2049,2050,-1,0};
  
 	cout<<"----------------------------------------------------------\n";
 	cout<<endl<<"Testing Date Constructor Date(day d,month m ,year y)\n\n";
-	for(int i=0;i<4;i++)
+	for(int i=0;i<8;i++)
 	{
-		for(int j=0;j<4;j++)
+		for(int j=0;j<8;j++)
 		{
-			for(int k=0;k<5;k++)
+			for(int k=0;k<8;k++)
 			{
 				try{
-					Date d(day[i],month[j],year[k]);
-					cout<<"Date  constructed with day   - "<<day[i]<<" month- "<<month[j]<<" year- "<<year[k]<<endl;
+					Date d( (Day)day[i], (Month)month[j], (Year) year[k]);
+					cout<<"Date constructed with :          "<<(Day)day[i]<<" - "<<(Month)month[j]<<" - "<<(Year)year[k]<<endl;
  
 				}
 				catch(invalid_argument e){
-					cout<<"Invalid Argument Error with day- "<<day[i]<<" month- "<<month[j]<<" year- "<<year[k]<<endl;
+					cout<<"!! Invalid Argument Error with : "<<(Day)day[i]<<" - "<<(Month)month[j]<<" - "<<(Year)year[k]<<endl;
 				}
 				catch(out_of_range e){
-					cout<<"Out of Range Error with day  - "<<day[i]<<" month- "<<month[j]<<" year- "<<year[k]<<endl;
+					cout<<"!! Out of Range Error with :     "<<(Day)day[i]<<" - "<<(Month)month[j]<<" - "<<(Year)year[k]<<endl;
 				}
 				catch(domain_error e){
-					cout<<"Domain Error with day        - "<<day[i]<<" month- "<<month[j]<<" year- "<<year[k]<<endl;
+					cout<<"!! Domain Error with :           "<<(Day)day[i]<<" - "<<(Month)month[j]<<" - "<<(Year)year[k]<<endl;
 				}
 			}
 		}
 	}
  
-	cout<<endl<<"Testing Date Constructor Date(const char*)\n\n";
-	DateFormat format[]={DateFormat("dd","mm","yyyy"),DateFormat("dd",NULL,"yy"),DateFormat("dd","m","yy")};
-	string days[]={"29-","31-","32-"};
+	cout<<endl<<endl<<"Testing Date Constructor Date(const char*)\n";
+	string formats[] = { "dd-mm-yyyy" , "d-m-yyyy" , "dd-m-yy" };
+	DateFormat format[]={DateFormat(formats[0].c_str()),DateFormat(formats[1].c_str()),DateFormat(formats[2].c_str())};
+	string days[]={"29-","31-","32-","-1"};
 	string months[]={"1-","2","03-","13-"};
-	string years[]={"99","2016","2050"};
+	string years[]={"99","2016","2050","-30"};
 	for(int i=0;i<3;i++)
 	{
 		Date::setFormat(format[i]);
-		for(int j=0;j<3;j++)
+		cout<<endl<<"## Date Format set : "<<formats[i]<<endl;
+		for(int j=0;j<4;j++)
 		{
 			for(int k=0;k<4;k++)
 			{
-				for(int m=0;m<3;m++)
+				for(int m=0;m<4;m++)
 				{
 					try {
 						Date f((days[j]+months[k]+years[m]).c_str());
-						cout<<"Date Constructed with             "<<(days[j]+months[k]+years[m])<<endl;
+						cout<<"Date constructed with :          "<<days[j]<<"  "<<months[k]<<"  "<<years[m]<<endl;
+		 
 					}
 					catch(invalid_argument e){
-					cout<<"Invalid Argument Error with day-  "<<day[j]<<" month- "<<month[k]<<" year- "<<year[m]<<endl;
+						cout<<"!! Invalid Argument Error with : "<<days[j]<<"  "<<months[k]<<"  "<<years[m]<<endl;
 					}
 					catch(out_of_range e){
-						cout<<"Out of Range Error with day  -    "<<day[j]<<" month- "<<month[k]<<" year- "<<year[m]<<endl;
+						cout<<"!! Out of Range Error with :     "<<days[j]<<"  "<<months[k]<<"  "<<years[m]<<endl;
 					}
 					catch(domain_error e){
-						cout<<"Domain Error with day       - "<<day[j]<<" month- "<<month[k]<<" year- "<<year[m]<<endl;
+						cout<<"!! Domain Error with :           "<<days[j]<<"  "<<months[k]<<"  "<<years[m]<<endl;
 					}
- 
 			    }
 		    }
 	    }
     }
 }
+
+//Tests for Unary Operators
 void unaryoperators(Date &dt)
 {
 	cout<<"\nTesting Unary Arithmetic Operators true statements will be printed"<<endl<<endl;
 		try{
-		Date d=dt;
+			Date d= dt;
 			cout<<"++"<<d<<" is ";
 			cout<<(++d)<<endl;
 		} 
 		catch(invalid_argument e){
 			cout<<"Invalid Argument Error for "<<endl;
- 
 		}
 		catch(domain_error e){
 			cout<<"Domain Error"<<endl;
@@ -257,9 +260,11 @@ void unaryoperators(Date &dt)
 			cout<<"Out Of Range Error --Operator"<<endl;
 		}
  
+ 
 		try{
 			Date d=dt;
-			cout<<d<<"++"<<" is ";cout<<(d++)<<endl;
+			cout<<d<<"++"<<" is ";
+			cout<<(d++)<<endl;
  
 		} 
 		catch(invalid_argument e){
@@ -272,9 +277,12 @@ void unaryoperators(Date &dt)
 		catch(out_of_range e){
 			cout<<"Out Of Range Error Operator++"<<endl;
 		}
+		
+		
 		try{
 			Date d=dt;
-			cout<<d<<"--"<<" is ";cout<<(d--)<<endl;
+			cout<<d<<"--"<<" is ";
+			cout<<(d--)<<endl;
  
 		} 
 		catch(invalid_argument e){
@@ -293,58 +301,72 @@ void test_unary()
 {
 	DateFormat df("dd-mm-yyyy");
 	Date::setFormat(df);
-	Date a("28-02-1996");
+	Date a("28-02-2016");
 	Date b("31-12-2049");
 	Date c("01-01-1950");
 	cout<<"-------------------------------------------------------------------------";
 	unaryoperators(a);
 	unaryoperators(b);
 	unaryoperators(c);
- 
 }
-void binaryoperators(Date &d,int x)
+
+//Test for addition operator
+void addFunct(Date &d,int x)
 {
 	cout<<d<<" + "<<x<<" is "<<(d+x);
 	cout<<endl;
 }
-void test_binary()
+void test_add()
 {
-	int arr[]={1,4,555,-365,366};
+	int arr[]={0,-1,1,15,-365,365,366};
 	DateFormat df("dd-mm-yyyy");
 	Date::setFormat(df);
-	Date a("28-02-1996");
+	Date a("28-02-2000");
 	Date b("31-12-2049");
 	Date c("01-01-1950");
+	Date d("01-03-2020");
 	cout<<"-------------------------------------------------------------"<<endl;
 	cout<<"Testing Adding Number Of Days true statements will be printed"<<endl<<endl;
-	for(int i=0;i<5;i++)
+	for(int i=0;i<7;i++)
 	{
 		try{
-			binaryoperators(a,arr[i]);
+			addFunct(a,arr[i]);
 		}
 		catch (out_of_range e){
 			cout<<"Out of range for "<<a<<" + "<<arr[i]<<endl;
 		}
 		catch(domain_error e){
-			cout<<"Domain Error"<<endl;
+			cout<<"Domain Error for "<<a<<" + "<<arr[i]<<endl;
 		}
+		
 		try{
-			binaryoperators(b,arr[i]);
+			addFunct(b,arr[i]);
 		}
 		catch (out_of_range e){
 			cout<<"Out of range for "<<b<<" + "<<arr[i]<<endl;
 		}
 		catch(domain_error e){
-			cout<<"Domain Error"<<endl;
+			cout<<"Domain Error for "<<b<<" + "<<arr[i]<<endl;
 		}
+		
 		try{
-		binaryoperators(c,arr[i]);
+			addFunct(c,arr[i]);
 		}
 		catch (out_of_range e){
 			cout<<"Out of range for "<<c<<" + "<<arr[i]<<endl;
 		}	
 		catch(domain_error e){
-			cout<<"Domain Error"<<endl;
+			cout<<"Domain Error for "<<c<<" + "<<arr[i]<<endl;
+		}
+		
+		try{
+			addFunct(d,arr[i]);
+		}
+		catch (out_of_range e){
+			cout<<"Out of range for "<<d<<" + "<<arr[i]<<endl;
+		}	
+		catch(domain_error e){
+			cout<<"Domain Error for "<<d<<" + "<<arr[i]<<endl;
 		}
 	}
 }
@@ -361,9 +383,9 @@ void test_diff()
 {	
 	DateFormat df("dd-mm-yyyy");
 	Date::setFormat(df);
-	Date a("03-04-2016");
-	Date b("03-04-2015");
-	Date c("03-04-2017");
+	Date a("13-10-2016");
+	Date b("13-10-2015");
+	Date c("13-10-2017");
 	cout<<"-------------------------------------------------------------------------"<<endl;
 	difference_operator(a,b);
 	difference_operator(c,b);
@@ -383,16 +405,19 @@ void test_leap()
 {
 	DateFormat df("dd-mm-yyyy");
 	Date::setFormat(df);
-	Date a("03-04-2016");
-	Date b("03-04-2015");
-	Date c("03-04-2017");
+	Date a("01-01-2016");
+	Date b("03-04-1955");
+	Date c("23-12-2028");
+	Date d("03-05-2010");
 	cout<<"-------------------------------------------------------------------------"<<endl;
 	LeapYear(a);
 	LeapYear(b);
 	LeapYear(c);
+	LeapYear(d);
 }
+
 void CastOperators(Date & d1){
-	cout<<"Testing Cast Operators "<<endl<<endl;
+	cout<<"Testing Cast Operators "<<endl;
 	cout<<d1<<" as WeekNumber is "<<static_cast<WeekNumber>(d1)<<endl;
 	cout<<d1<<" as Month is "<<static_cast<Month>(d1)<<endl;
 	cout<<d1<<" as WeekDay is "<<static_cast<WeekDay>(d1)<<endl;
@@ -412,7 +437,7 @@ void test_cast()
 }
  
 void RelationalOperators(Date & d1 , Date & d2){
-	cout<<"Checking Relational Operators Only the Statements that are true will be printed"<<endl<<endl;
+	cout<<"Checking Relational Operators Only the Statements that are true will be printed"<<endl;
  
 	if(d1!=d2)
 	{
@@ -459,7 +484,7 @@ void test_relation()
 	RelationalOperators(c,b);
 	RelationalOperators(c,c);
 }
-void checkformarsetter()
+void check_format()
 {
 	cout<<"-------------------------------------------------------------------------"<<endl;
 	cout<<"Checking the format setter and getter \n";
@@ -471,32 +496,89 @@ void checkformarsetter()
 	cout<<"The output  is "<<d<<endl;
 	DateFormat f2("dd-mm-yyyy");
 	Date::getFormat()=f2;
-	cout<<"Changing the format using getFormat as reference is returned by that "<<endl;
+	cout<<"Changing the format using getFormat as reference is returned by that (dd-mm-yyyy)"<<endl;
 	cout<<"The output in this format is "<<d<<endl;
  
 	DateFormat f3("d-m-yy");
 	Date::getFormat()=f3;
+	cout<<"Changing the format using getFormat as reference is returned by that (d-m-yy)"<<endl;
 	cout<<"The output in this format is "<<d<<endl;
  
 	cout<<"Set and Get Format Are Working Correctly"<<endl<<endl;
  
 }
 
+void check_printer()
+{
+	cout<<"-------------------------------------------------------------------------"<<endl;
+	cout<<"Checking the format setter and getter \n";
+	
+	DateFormat f;
+	Date::setFormat(f);
+	Date d("26-Feb-16");
+	cout<<"Constructed Date Object with date : 26-Feb-16"<<endl;
+	cout<<"Output from the print ostream function: "<<d<<endl;
+	
+	cout<<"Verified.!"<<endl<<endl;
+}
+
+void check_input()
+{
+	cout<<"Enter a valid Date Format.."<<endl;
+	string datef;
+	cin>>datef;
+	try{
+		DateFormat ddf(datef.c_str());
+		Date::setFormat(ddf);
+	}
+	catch(...) {
+		cout<<"No valid date format encountered...!! Exiting !"<<endl;
+	}
+	cout<<"Date Format entered: "<<datef<<endl;
+	
+	cout<<"Enter Date."<<endl;
+	Date s;
+	cin>>s;
+	cout<<"Entered Date: "<<s<<endl;
+}
+
 int main()
 {
 	DateFormatConstructor();     //Prints and Checks all 7x7x7 combinations
-	
-	//change karna padhega
-	DateConstructor();           //warning large data 
-	
+	cout<<"*******************************************************************************"<<endl;
+	cout<<"*******************************************************************************"<<endl;
+	DateConstructor();           //Prints large amount of data
+	cout<<"*******************************************************************************"<<endl;
+	cout<<"*******************************************************************************"<<endl;
 	test_unary();
-	test_binary();
+	cout<<"*******************************************************************************"<<endl;
+	cout<<"*******************************************************************************"<<endl;
+	test_add();
+	cout<<"*******************************************************************************"<<endl;
+	cout<<"*******************************************************************************"<<endl;
 	test_diff();
+	cout<<"*******************************************************************************"<<endl;
+	cout<<"*******************************************************************************"<<endl;
 	test_leap();
+	cout<<"*******************************************************************************"<<endl;
+	cout<<"*******************************************************************************"<<endl;
 	test_cast();
+	cout<<"*******************************************************************************"<<endl;
+	cout<<"*******************************************************************************"<<endl;
 	test_relation();
-	checkformarsetter();
+	cout<<"*******************************************************************************"<<endl;
+	cout<<"*******************************************************************************"<<endl;
+	check_format();
+	cout<<"*******************************************************************************"<<endl;
+	cout<<"*******************************************************************************"<<endl;
+	check_printer();
+	cout<<"*******************************************************************************"<<endl;
+	cout<<"*******************************************************************************"<<endl;
+	check_input();
 	
+	
+	
+	cout<<endl;
 	cout<<"*******************************************************************************"<<endl;
 	cout<<"*******************************************************************************"<<endl;
 	cout<<"*******************************************************************************"<<endl;

@@ -27,19 +27,19 @@ DateFormat Date::format("dd-mm-yy");
 	
 		int size1 = first;
 		if(size1 == 0) {
-			throw invalid_argument("");
+			throw invalid_argument("Invalid Argument Error !!");
 		}
 		strcpy( df , const_cast<char*> ((form.substr( 0, size1 )).c_str()));
 	
 		int size2 = second - first - 1 ;
 		if(size1 == 0) {
-			throw invalid_argument("");
+			throw invalid_argument("Invalid Argument Error !!");
 		}
 		strcpy( mf , const_cast<char*> ((form.substr( first + 1, size2 )).c_str()));
 	
 		int size3 = (size-1) - second;
 		if(size1 == 0) {
-			throw invalid_argument("");
+			throw invalid_argument("Invalid Argument Error !!");
 		}
 		strcpy( yf , const_cast<char*> ((form.substr( second + 1, size3 )).c_str()));
 	
@@ -64,17 +64,17 @@ DateFormat Date::format("dd-mm-yy");
 	/*****************************************************/
 	
 	void checkDate( int day_, int month_, int year_ )                       //constant function. cannot alter values.
-		
+		throw ( invalid_argument, domain_error, out_of_range )
 	{
 
 		//condition on years
 		if(year_>= 2050 || year_ < 1950){
-			throw out_of_range("");
+			throw out_of_range("Out of range Error !!");
 		}
 	
 		//general condition 
 		if( day_<=0 || month_<=0  || month_>12 || month_>31 ){
-			throw invalid_argument("");
+			throw invalid_argument("Invalid Argument Error !!");
 		}
 	
 		//date and month condition
@@ -83,7 +83,7 @@ DateFormat Date::format("dd-mm-yy");
 		{
 			case 1: if( day_ > 31 )
 					st=1; break;
-			case 2: if( !year_%4 ){ 
+			case 2: if( year_%4 == 0 ){ 
 						if( day_ > 29 ) {
 							st=1;
 							break;
@@ -115,11 +115,11 @@ DateFormat Date::format("dd-mm-yy");
 					st=1; break;
 			case 12: if( day_ > 31 )
 					st=1; break;
-			default: throw invalid_argument("");
+			default: throw invalid_argument("Invalid Argument Error !!");
 					 break;			 
 		}
 		if(st==1){
-			throw domain_error("");
+			throw domain_error("Domain Error !!");
 		}
 	
 	}
@@ -719,11 +719,13 @@ Date Date::operator+ (int noOfDays)
     t.tm_year = static_cast<unsigned int>(year)-1900;
     t.tm_mon  = static_cast<unsigned int>(month)-1;
     t.tm_mday = static_cast<unsigned int>(day);
+    
     t.tm_mday += noOfDays;
     mktime(&t);
+    
     Date d;
-    d.year  = static_cast<Year> (1900+t.tm_year);
-    d.month = static_cast<Month>(t.tm_mon+1);
+    d.year  = static_cast<Year> (1900+ t.tm_year);
+    d.month = static_cast<Month>(t.tm_mon +1);
     d.day   = static_cast<Day>  (t.tm_mday);
     
     checkDate( d.day, d.month, d.year );
@@ -862,6 +864,7 @@ istream& operator>> (istream& is, Date& d){
 		d= temp;
 	}
 	catch(...){
+		cout<<"Error in entering the value. Setting 26-Feb-1996 as default value."<<endl;
 		Date temp(D26,Feb,1996);	//default date
 		d= temp;
 		return is;
